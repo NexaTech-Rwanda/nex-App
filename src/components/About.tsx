@@ -1,12 +1,22 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Button } from "./ui/button";
 import { MessageSquare } from "lucide-react";
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section id="about" className="py-20 cream-section">
+    <section id="about" ref={ref} className="py-20 cream-section">
       <div className="container">
         {/* Who Are We Section */}
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <span className="section-badge mb-4">who we are</span>
           <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-6">
             Who Are We? The Brain Of Africa's Tech Ecosystem
@@ -14,61 +24,65 @@ const About = () => {
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             At NexaTech Rwanda, we are more than just a tech company—we are the architects of Africa's digital future.
           </p>
-          <Button className="rounded-full gap-2">
+          <Button className="rounded-full gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
             <MessageSquare className="w-4 h-4" />
             Book a call
           </Button>
-        </div>
+        </motion.div>
 
         {/* Blue CTA Box */}
-        <div className="blue-gradient rounded-3xl p-10 text-primary-foreground mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 60, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="blue-gradient rounded-3xl p-10 text-primary-foreground mb-16 hover:shadow-2xl transition-shadow duration-500"
+        >
           <h3 className="font-serif text-3xl font-medium mb-4">Africa Tech Brain</h3>
           <p className="text-primary-foreground/80 mb-6 max-w-md">
             Leveraging cutting-edge technology to enhance efficiency, precision, and sustainability in every project.
           </p>
           <ul className="space-y-2 mb-8">
-            <li className="flex items-center gap-2 text-sm">
-              <span className="text-yellow-300">✦</span> AI-Powered Business Solutions
-            </li>
-            <li className="flex items-center gap-2 text-sm">
-              <span className="text-yellow-300">✦</span> Custom Tech Solutions
-            </li>
-            <li className="flex items-center gap-2 text-sm">
-              <span className="text-yellow-300">✦</span> African AI Innovation
-            </li>
-            <li className="flex items-center gap-2 text-sm">
-              <span className="text-yellow-300">✦</span> Pan-African Cloud Infrastructure
-            </li>
+            {[
+              "AI-Powered Business Solutions",
+              "Custom Tech Solutions", 
+              "African AI Innovation",
+              "Pan-African Cloud Infrastructure"
+            ].map((item, index) => (
+              <motion.li 
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                className="flex items-center gap-2 text-sm"
+              >
+                <span className="text-yellow-300">✦</span> {item}
+              </motion.li>
+            ))}
           </ul>
-          <Button variant="outline" className="rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 gap-2">
+          <Button variant="outline" className="rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 gap-2 transition-all duration-300 hover:scale-105">
             <MessageSquare className="w-4 h-4" />
             Join Us
           </Button>
-        </div>
+        </motion.div>
 
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-8 text-center">
-          <div>
-            <div className="font-serif text-5xl font-medium text-foreground mb-2">4</div>
-            <div className="font-medium text-foreground mb-2">Total Product</div>
-            <p className="text-sm text-muted-foreground">
-              We have officially in process of launching our main projects
-            </p>
-          </div>
-          <div>
-            <div className="font-serif text-5xl font-medium text-foreground mb-2">97%</div>
-            <div className="font-medium text-foreground mb-2">Success Rate</div>
-            <p className="text-sm text-muted-foreground">
-              Consistently delivering exceptional results that exceed users expectations.
-            </p>
-          </div>
-          <div>
-            <div className="font-serif text-5xl font-medium text-foreground mb-2">1 Year</div>
-            <div className="font-medium text-foreground mb-2">In business</div>
-            <p className="text-sm text-muted-foreground">
-              Half a decade of shaping digital experiences and driving business growth.
-            </p>
-          </div>
+          {[
+            { value: "4", label: "Total Product", desc: "We have officially in process of launching our main projects" },
+            { value: "97%", label: "Success Rate", desc: "Consistently delivering exceptional results that exceed users expectations." },
+            { value: "1 Year", label: "In business", desc: "Half a decade of shaping digital experiences and driving business growth." },
+          ].map((stat, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 + index * 0.15 }}
+            >
+              <div className="font-serif text-5xl font-medium text-foreground mb-2">{stat.value}</div>
+              <div className="font-medium text-foreground mb-2">{stat.label}</div>
+              <p className="text-sm text-muted-foreground">{stat.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

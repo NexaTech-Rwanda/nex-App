@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { MessageSquare } from "lucide-react";
@@ -30,11 +32,19 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-20 cream-section">
+    <section ref={ref} className="py-20 cream-section">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <span className="section-badge mb-4">They trust us</span>
           <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-6">
             Real feedback, <span className="font-bold">real results.</span>
@@ -42,28 +52,35 @@ const Testimonials = () => {
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             Explore how businesses and individuals have achieved their goals with our tailored solutions and exceptional support.
           </p>
-          <Button className="rounded-full gap-2">
+          <Button className="rounded-full gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
             <MessageSquare className="w-4 h-4" />
             Book a call
           </Button>
-        </div>
+        </motion.div>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-card rounded-2xl p-6 border border-border">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="bg-card rounded-2xl p-6 border border-border hover:shadow-xl transition-shadow duration-300"
+            >
               <Avatar className="w-12 h-12 mb-4">
                 <AvatarImage src={testimonial.image} />
                 <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
               </Avatar>
-              <p className="text-sm text-muted-foreground mb-6 font-handwriting italic">
+              <p className="text-sm text-muted-foreground mb-6 italic">
                 {testimonial.content}
               </p>
               <div>
                 <div className="font-serif font-medium text-foreground">{testimonial.name}</div>
                 <div className="text-xs text-muted-foreground">{testimonial.role}</div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

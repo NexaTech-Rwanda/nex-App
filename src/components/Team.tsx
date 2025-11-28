@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Button } from "./ui/button";
 import { MessageSquare } from "lucide-react";
 
@@ -30,11 +32,19 @@ const teamMembers = [
 ];
 
 const Team = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-20 cream-section">
+    <section ref={ref} className="py-20 cream-section">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <span className="section-badge mb-4">Team</span>
           <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-6">
             Meet The Architects Of Africa's Tech Future
@@ -42,48 +52,65 @@ const Team = () => {
           <p className="text-muted-foreground max-w-xl mx-auto">
             Get to know the visionaries dedicated to making Rwanda the continent's premier tech hub.
           </p>
-        </div>
+        </motion.div>
 
         {/* Team Grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {teamMembers.slice(0, 3).map((member, index) => (
-            <div key={index} className="bg-card rounded-2xl p-6 border border-border">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="bg-card rounded-2xl p-6 border border-border group hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
+            >
               <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-muted">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <h3 className="font-serif text-xl font-medium text-foreground">{member.name}</h3>
               <p className="text-sm text-muted-foreground">{member.role}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
           {teamMembers.slice(3).map((member, index) => (
-            <div key={index} className="bg-card rounded-2xl p-6 border border-border">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.45 + index * 0.15 }}
+              className="bg-card rounded-2xl p-6 border border-border group hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
+            >
               <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-muted">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <h3 className="font-serif text-xl font-medium text-foreground">{member.name}</h3>
               <p className="text-sm text-muted-foreground">{member.role}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Join Us Button */}
-        <div className="text-center">
-          <Button className="rounded-full gap-2">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center"
+        >
+          <Button className="rounded-full gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
             <MessageSquare className="w-4 h-4" />
             Join Us
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
