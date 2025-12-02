@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen hero-gradient overflow-hidden">
+    <section id="home" className="relative max-h-screen hero-gradient overflow-hidden">
       {/* Decorative elements */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}

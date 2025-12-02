@@ -1,73 +1,84 @@
-# Welcome to your Lovable project
+# NexaTech Rwanda
 
-## Project info
+## Project Information
 
-**URL**: https://lovable.dev/projects/92cf3583-7e8c-429f-bdd8-75b4febbd173
+This project is built using modern web technologies to deliver a fast, responsive, and professional digital experience for NexaTech Rwanda.
 
-## How can I edit this code?
+## 🚀 Tech Stack
 
-There are several ways of editing your application.
+* **Vite** – lightning-fast frontend tooling
+* **React** – modern UI library
+* **TypeScript** – type-safe development
+* **Tailwind CSS** – utility-first styling
+* **shadcn-ui** – accessible UI components
+* **Framer Motion** – smooth and elegant animations
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/92cf3583-7e8c-429f-bdd8-75b4febbd173) and start prompting.
+## 📁 Editing the Project
 
-Changes made via Lovable will be committed automatically to this repo.
+You can edit this project using **any of the following methods**:
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### 1. **Local Development (Recommended)**
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Enter project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will automatically reload when you make changes.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 2. **Edit Directly on GitHub**
 
-**Use GitHub Codespaces**
+* Open any file in the repo
+* Click the **pencil icon** to edit
+* Commit your changes
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 3. **GitHub Codespaces**
 
-## What technologies are used for this project?
+* Go to the repo → **Code** → **Codespaces**
+* Create a new Codespace
+* Start editing with a full online VS Code environment
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🌐 Deployment
 
-## How can I deploy this project?
+This project can be deployed to any modern hosting provider (Vercel, Netlify, Cloudflare, etc.). Build the production bundle with:
 
-Simply open [Lovable](https://lovable.dev/projects/92cf3583-7e8c-429f-bdd8-75b4febbd173) and click on Share -> Publish.
+```sh
+npm run build
+```
 
-## Can I connect a custom domain to my Lovable project?
+Then deploy the `dist` folder.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🛠 Features
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+* Clean, modern UI
+* Smooth animations
+* Responsive design
+* Easy to customize
+* Fast development environment
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! Feel free to fork this project and submit improvements.
+
+---
+
+## 📄 License
+
+This project is licensed under your preferred license (MIT recommended).

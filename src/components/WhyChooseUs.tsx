@@ -45,7 +45,6 @@ const WhyChooseUs = () => {
           </p>
           <div className="flex items-center gap-4">
             <Button className="rounded-full gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-              <span className="w-4 h-4">📋</span>
               Get started
             </Button>
             <Button variant="outline" className="rounded-full transition-all duration-300 hover:scale-105">

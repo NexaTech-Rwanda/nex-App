@@ -8,7 +8,7 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <footer ref={ref} className="bg-foreground text-primary-foreground py-16">
+    <footer ref={ref} className="blue-gradient text-primary-foreground py-16">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}

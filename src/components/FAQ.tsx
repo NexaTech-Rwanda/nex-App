@@ -27,10 +27,11 @@ const FAQ = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 bg-background">
+    <section ref={ref} className="faq-bg py-20">
       <div className="container max-w-3xl">
+        
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -76,7 +77,7 @@ const FAQ = () => {
         </motion.div>
 
         {/* Partner Logos */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 0.5 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -87,7 +88,7 @@ const FAQ = () => {
             { icon: "✳", name: "Logoipsum" },
             { icon: "◉", name: "Logoipsum" },
           ].map((logo, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               whileHover={{ scale: 1.1, opacity: 1 }}
               className="flex items-center gap-2 text-muted-foreground cursor-pointer transition-all"
