@@ -22,9 +22,10 @@ const Footer = () => {
               Transforming Africa and Rwanda tech solutions
             </p>
             <Button
-              variant="outline"
+              // variant="outline"
               size="sm"
-              className="rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 gap-2 transition-all duration-300 hover:scale-105"
+              className="rounded-full border-primary-foreground/10 text-primary-foreground bg-primary-foreground/10
+              hover:bg-primary-foreground/10 gap-2 transition-all duration-300 hover:scale-105"
             >
               <MessageSquare className="w-4 h-4" />
               Get in contact

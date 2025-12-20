@@ -45,7 +45,8 @@ const Work = () => {
               <div className="flex items-center gap-4">
                 <span className="text-xs text-muted-foreground">Features</span>
                 <span className="text-xs text-muted-foreground">FAQ</span>
-                <Button size="sm" className="rounded-full text-xs h-7 transition-all duration-300 hover:scale-105">Download App</Button>
+                <Button size="sm" className="rounded-full text-xs h-7 transition-all duration-300 
+                hover:scale-105">Download App</Button>
               </div>
             </div>
             
@@ -56,7 +57,7 @@ const Work = () => {
                 </h4>
 
                 {/* green text */}
-                <p className="font-serif text-xl text-[#68AE3C] mb-4">Manage Better</p>
+                <p className="font-serif text-xl text-[#000810] mb-4">Manage Better</p>
 
                 <p className="text-sm text-muted-foreground mb-4">
                   Shoppa helps different business owners and customers connect in one seamless mobile platform for free.
