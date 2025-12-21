@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom"; // ✅ added
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
+  { label: "About", href: "/About" },
+  { label: "Work", href: "/work" },
 ];
 
 const Navbar = () => {
@@ -18,29 +18,42 @@ const Navbar = () => {
     >
       <div className="flex items-center gap-8 bg-card/80 backdrop-blur-md rounded-full px-6 py-3 border border-border shadow-sm">
 
-        {/* Logo */}
-        <span className="font-display font-semibold text-foreground">
+        {/* Logo → Home */}
+        <Link
+          to="/"
+          className="font-display font-semibold text-foreground cursor-pointer transition-colors duration-300"
+        >
           NexaTech Rwanda
-        </span>
+        </Link>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-6">
+          {/* Home link */}
+          <Link
+            to="/"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground cursor-pointer transition-colors duration-300"
+          >
+            Home
+          </Link>
+
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
+              to={link.href}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground cursor-pointer transition-colors duration-300"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        {/* CTA Button */}
-        <Button variant="default" size="sm" className="rounded-full gap-2">
-          <Phone className="w-4 h-4" />
-          Say hi
-        </Button>
+        {/* Say Hi → Contact page */}
+        <Link to="/contact">
+          <Button variant="default" size="sm" className="rounded-full gap-2 cursor-pointer">
+            <Phone className="w-4 h-4" />
+            Say hi
+          </Button>
+        </Link>
       </div>
     </motion.nav>
   );
