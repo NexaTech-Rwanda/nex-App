@@ -7,10 +7,23 @@ const Hero = () => {
     <section
       id="home"
       className="
-        relative max-h-screen hero-gradient overflow-hidden
+        relative min-h-screen hero-gradient overflow-hidden
+        px-4 md:px-8 lg:px-16
       "
     >
-      {/* ⭐ TOP-HALF DOTTED OVERLAY */}
+      {/* 🌄 Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1')",
+        }}
+      />
+
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-background/70" />
+
+      {/* ⭐ Dotted Overlay */}
       <div
         className="
           absolute top-0 left-0 w-full h-[98%] pointer-events-none
@@ -19,88 +32,81 @@ const Hero = () => {
         "
       />
 
-      {/* Decorative elements */}
-      <motion.div 
+      {/* Decorative gradients */}
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-muted/50 to-transparent rounded-full blur-3xl" 
+        className="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-muted/50 to-transparent rounded-full blur-3xl"
       />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
-        className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-bl from-muted/30 to-transparent rounded-full blur-3xl" 
+        className="absolute top-20 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-muted/30 to-transparent rounded-full blur-3xl"
       />
 
-      {/* Cloud/mountain shapes */}
-      <motion.div 
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
-        className="absolute top-32 left-0 w-32 h-48 bg-gradient-to-r from-muted-foreground/5 to-transparent" 
-        style={{ clipPath: 'polygon(0 100%, 100% 60%, 100% 100%)' }} 
-      />
-
-      <motion.div 
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
-        className="absolute top-20 right-0 w-48 h-64 bg-gradient-to-l from-muted-foreground/10 to-transparent"
-        style={{ clipPath: 'polygon(0 40%, 100% 0, 100% 100%, 0 100%)' }} 
-      />
-      
-      <div className="container relative pt-32 pb-20">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="container relative pt-40 pb-32">
+        <div className="max-w-4xl mx-auto text-center">
 
           {/* Badge */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm mb-10"
           >
             <span className="w-1.5 h-1.5 bg-primary-foreground rounded-full animate-pulse" />
             Revolutionize Africa Tech
           </motion.div>
-          
+
           {/* Heading */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium text-foreground mb-6 leading-tight"
+            className="font-serif text-6xl md:text-7xl lg:text-8xl font-medium text-foreground mb-8 leading-tight"
           >
             Building Africa's Tech Ecosystem From Rwanda
           </motion.h1>
-          
+
           {/* Subtext */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-muted-foreground text-lg max-w-xl mx-auto mb-8"
+            className="text-muted-foreground text-xl max-w-2xl mx-auto mb-12"
           >
-            Transform Africa's tech with NexaTech Rwanda's innovative solutions. We're creating the tech ecosystem that will make Rwanda the brain of Africa's technological revolution.
+            Transform Africa's tech with NexaTech Rwanda's innovative solutions.
+            We're creating the ecosystem that will make Rwanda the brain of
+            Africa's technological revolution.
           </motion.p>
 
-          {/* Button */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button 
-              size="lg" 
-              className="rounded-full px-8 mb-8 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            <Button
+              size="lg"
+              className="rounded-full px-10 py-6 text-lg mb-14 transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               Join Us
             </Button>
           </motion.div>
 
-          {/* Trusted Clients */}
-          <motion.div 
+          {/* 🔁 Floating Avatars */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="flex flex-col items-center gap-4"
+          >
+            <div className="flex -space-x-3">
+
+              <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
@@ -124,10 +130,12 @@ const Hero = () => {
             </div>
             <span className="text-sm text-muted-foreground">Trusted by 30+ Clients</span>
           </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Bottom border decoration */}
+      {/* Bottom border */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   );
