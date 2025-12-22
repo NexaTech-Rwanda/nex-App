@@ -35,7 +35,7 @@ const Work = () => {
         <div className="container mx-auto px-6 relative z-10">
           {/* Heading */}
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6">
+            <h1 className="font-heading text-md md:text-4xl lg:text-4.5xl font-medium mb-16">
               <span className="italic">Our work speaks for itself – Dive into the projects that define us.</span>
             </h1>
             <p className="text-black text-lg md:text-xl max-w-2xl mx-auto">
