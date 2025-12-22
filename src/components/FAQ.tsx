@@ -33,7 +33,7 @@ const FAQ = () => {
   return (
     <section ref={ref} className="relative py-28 faq-bg overflow-hidden">
 
-      {/* ⭐ BLUR GLOW BEHIND QUESTIONS */}
+      {/*  BLUR GLOW BEHIND QUESTIONS */}
       <div
         className="
           absolute top-[35%] left-1/2 -translate-x-1/2 
@@ -126,7 +126,7 @@ const FAQ = () => {
         />
       </div>
 
-      {/* ⭐ CTA SECTION BELOW FAQ */}
+      {/* CTA SECTION BELOW FAQ */}
       <div className="container max-w-2xl text-center mt-24">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
