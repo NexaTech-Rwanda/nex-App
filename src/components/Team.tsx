@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: "Kagabo Lucky",
     role: "Chief Executive Officer (CEO)",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+    image: "./lucky.png",
   },
   {
     name: "Bizimana Christian",
@@ -17,17 +17,17 @@ const teamMembers = [
   {
     name: "Dushimire Aine",
     role: "Chief Technology Officer (CTO)",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face",
+    image: "./aine.png",
   },
   {
     name: "Kirezi Livia",
     role: "Chief Marketing Officer (CMO)",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face",
+    image: "./livia.png",
   },
   {
     name: "Niyirera Theogene",
     role: "Chief Sales Officer (CSO)",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+    image: "./munyakazi.png",
   },
 ];
 
