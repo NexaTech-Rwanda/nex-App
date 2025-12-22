@@ -152,4 +152,11 @@ html {
 }
 
 
+.notfound-bg {
+  background-image: url("/notfound-bg.png"); /* <-- your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: contrast(1.1) brightness(1.05);
+}
 
