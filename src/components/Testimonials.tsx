@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
@@ -9,104 +11,120 @@ const testimonials = [
     name: "Mike Karanzi",
     role: "CEO | ShopWise",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face",
     content:
-      "Shoppa increased my sales by improving product visibility and customer reach.",
+      "The use of Shoppa made my products selling increase due to improved visibility.",
   },
   {
     name: "Alex",
     role: "CEO | Urumbiai Rwanda",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face",
     content:
-      "Our operations became smoother and customers engaged more consistently.",
+      "Using Shoppa allowed us to sell more products consistently every month.",
   },
   {
-    name: "Melisa Den",
+    name: "Melissa Den",
     role: "Marketing Lead | Prime Life Insurance",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face",
     content:
       "Shoppa helped us scale faster and reach the right audience effectively.",
   },
   {
-    name: "Alex Divert",
-    role: "Sales Officer | Nssb",
+    name: "Alex Divan",
+    role: "Sales Officer | Neeb",
     image:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=120&h=120&fit=crop&crop=face",
     content:
-      "Sales tracking and performance insights improved instantly.",
+      "Our monthly revenue increased significantly after adopting Shoppa.",
   },
 ];
 
-// duplicate for infinite loop
 const marqueeItems = [...testimonials, ...testimonials];
+const rotations = [-3, -1, 2, -2];
 
-const Testimonials = () => {
+export default function Testimonials() {
   const [paused, setPaused] = useState(false);
 
   return (
-    <section className="py-20 cream-section overflow-hidden">
-      <div className="container">
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-20">
           <span className="section-badge mb-4">They trust us</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium mb-6">
-            Real feedback, <span className="font-bold">real results.</span>
+
+          <h2 className="font-serif text-[40px] md:text-[48px] font-medium leading-tight mb-6">
+            Real feedback, <span className="font-semibold">real results.</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-            See how people are growing their businesses with Shoppa.
+
+          <p className="text-[15px] leading-6 text-muted-foreground max-w-xl mx-auto mb-8">
+            Explore how businesses and individuals achieved their goals with Shoppa.
           </p>
+
           <Button className="rounded-full gap-2">
             <MessageSquare className="w-4 h-4" />
             Book a call
           </Button>
         </div>
 
-        {/* Infinite small cards */}
+        {/* MARQUEE — SINGLE ROW, ~5px OVERLAP */}
         <div className="relative overflow-hidden">
           <motion.div
-            className="flex gap-4 w-max"
+            className="flex items-start w-max gap-10"
             animate={{ x: paused ? 0 : ["0%", "-50%"] }}
             transition={{
-              duration: 30,
+              duration: 40,
               ease: "linear",
               repeat: paused ? 0 : Infinity,
             }}
           >
-            {marqueeItems.map((testimonial, index) => (
-              <div
+            {marqueeItems.map((t, index) => (
+              <motion.div
                 key={index}
                 onMouseEnter={() => setPaused(true)}
                 onMouseLeave={() => setPaused(false)}
-                className="w-[240px] bg-card rounded-xl p-5 border border-border hover:shadow-lg transition"
+                initial={{ rotate: rotations[index % rotations.length] }}
+                whileHover={{ rotate: 0, y: -6 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18 }}
+                style={{
+                  zIndex: index,
+                  marginLeft: index === 0 ? "0px" : "-5px",
+                }}
+                className="
+                  w-[320px]
+                  min-h-[260px]
+                  bg-card
+                  border
+                  rounded-2xl
+                  p-6
+                  shadow-md
+                  hover:shadow-xl
+                  transition-all
+                "
               >
-                <Avatar className="w-10 h-10 mb-3">
-                  <AvatarImage src={testimonial.image} />
-                  <AvatarFallback>
-                    {testimonial.name[0]}
-                  </AvatarFallback>
+                <Avatar className="w-10 h-10 mb-4">
+                  <AvatarImage src={t.image} />
+                  <AvatarFallback>{t.name[0]}</AvatarFallback>
                 </Avatar>
 
-                <p className="text-sm text-muted-foreground mb-4 italic">
-                  “{testimonial.content}”
+                <p className="font-serif text-[14px] leading-6 italic text-muted-foreground mb-6">
+                  “{t.content}”
                 </p>
 
                 <div>
-                  <div className="font-medium text-sm">
-                    {testimonial.name}
+                  <div className="text-[14px] font-medium text-foreground">
+                    {t.name}
                   </div>
-                  <div className="text-xs text-muted-foreground">
-                    {testimonial.role}
+                  <div className="text-[12px] text-muted-foreground">
+                    {t.role}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Testimonials;
+}
