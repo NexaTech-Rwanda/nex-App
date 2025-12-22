@@ -39,31 +39,6 @@ const Work = () => {
           <h3 className="font-serif text-3xl font-medium text-foreground mb-6">Shoppa</h3>
           
           {/* Mock App Preview */}
-          <div className="bg-card rounded-2xl p-6 border border-border">
-            <div className="flex items-center justify-between mb-6">
-              <span className="text-sm font-medium text-primary">Shoppa</span>
-              <div className="flex items-center gap-4">
-                <span className="text-xs text-muted-foreground">Features</span>
-                <span className="text-xs text-muted-foreground">FAQ</span>
-                <Button size="sm" className="rounded-full text-xs h-7 transition-all duration-300 
-                hover:scale-105">Download App</Button>
-              </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h4 className="font-serif text-2xl md:text-3xl font-medium mb-2">
-                  Shop smarter Sell Faster
-                </h4>
-
-                {/* green text */}
-                <p className="font-serif text-xl text-[#000810] mb-4">Manage Better</p>
-
-                <p className="text-sm text-muted-foreground mb-4">
-                  Shoppa helps different business owners and customers connect in one seamless mobile platform for free.
-                </p>
-                <Button variant="outline" size="sm" className="rounded-full transition-all duration-300 hover:scale-105">Get Started</Button>
-              </div>
               
               {/* ------------------ FINAL CLEAN IMAGE ONLY ------------------ */}
               <motion.div 
@@ -81,8 +56,8 @@ const Work = () => {
                   <img
                     src="/shoppa.png"
                     alt="App Preview"
-                    width={300}
-                    height={600}
+                    width={1000}
+                    height={800}
                     className="rounded-2xl shadow-2xl object-contain"
                   />
                 </motion.div>
@@ -90,8 +65,8 @@ const Work = () => {
               </motion.div>
               {/* ------------------------------------------------------------- */}
 
-            </div>
-          </div>
+            
+        
         </motion.div>
       </div>
     </section>
