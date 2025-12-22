@@ -8,8 +8,35 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" ref={ref} className="py-20 cream-section">
-      <div className="container">
+    <section id="about" ref={ref} className="relative py-20 cream-section overflow-hidden">
+      
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1')",
+        }}
+      />
+
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-background/70" />
+
+      {/* Decorative gradient blobs */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2 }}
+        className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-muted/50 to-transparent rounded-full blur-3xl"
+      />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+        className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-bl from-muted/40 to-transparent rounded-full blur-3xl"
+      />
+
+      <div className="container relative z-10">
         {/* Who Are We Section */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -55,12 +82,11 @@ const About = () => {
                 transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                 className="flex items-center gap-2 text-sm"
               >
-                <span className="text-yellow-300">✦</span> {item}
+                <span className="text-white-300">*</span> {item}
               </motion.li>
             ))}
           </ul>
-          <Button  className="rounded-full border-primary-foreground/30 
-          text-primary-foreground  bg-primary-foreground/20 hover:bg-primary-foreground/10 gap-2 transition-all duration-300 hover:scale-105">
+          <Button className="rounded-full border-primary-foreground/30 text-primary-foreground bg-primary-foreground/20 hover:bg-primary-foreground/10 gap-2 transition-all duration-300 hover:scale-105">
             <MessageSquare className="w-4 h-4" />
             Join Us
           </Button>
