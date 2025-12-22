@@ -6,27 +6,27 @@ import { MessageSquare } from "lucide-react";
 const teamMembers = [
   {
     name: "Kagabo Lucky",
-    role: "Chief Executive Officer (CEO)",
+    role: "Chief Executive Officer - (CEO)",
     image: "./lucky.png",
   },
   {
     name: "Bizimana Christian",
-    role: "Chief Operation Officer (COO)",
+    role: "Chief Operation Officer - (COO)",
     image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300&h=300&fit=crop&crop=face",
   },
   {
     name: "Dushimire Aine",
-    role: "Chief Technology Officer (CTO)",
+    role: "Chief Technology Officer - (CTO)",
     image: "./aine.png",
   },
   {
     name: "Kirezi Livia",
-    role: "Chief Marketing Officer (CMO)",
+    role: "Chief Marketing Officer - (CMO)",
     image: "./livia.png",
   },
   {
     name: "Niyirera Theogene",
-    role: "Chief Sales Officer (CSO)",
+    role: "Chief Sales Officer - (CSO)",
     image: "./munyakazi.png",
   },
 ];
