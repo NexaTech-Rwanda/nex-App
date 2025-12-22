@@ -13,7 +13,7 @@ const Work = () => {
   return (
     <Layout>
       {/* ================= HERO-like section ================= */}
-      <section className="relative overflow-hidden pt-36 pb-24 text-black">
+      <section className="relative overflow-hidden pt-36 pb-24 text-black max-h-screen">
         {/*  Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
