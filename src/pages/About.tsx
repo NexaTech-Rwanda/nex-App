@@ -58,11 +58,11 @@ const About = () => {
           Our Story
         </h3>
         <p className="text-muted-foreground leading-relaxed mb-8">
-          Founded with a passion for solving african problems and a commitment to innovation, our team has grown from a small team of enthusiasts to a leading design studio. Over the years, we've partnered with startups and companies at every stage, helping them scale by delivering cutting-edge digital products and solutions. Our journey is fueled by creativity, collaboration, and a relentless pursuit of excellence.
+          Founded with a passion for solving african problemsand a commitment to innovation, our team has grown from a small team of enthusiasts to a leading design studio. Over the years, we've partnered with startups and companies at every stage, helping them scale by delivering cutting-edge digital products and solutions. Our journey is fueled by creativity, collaboration, and a relentless pursuit of excellence.
         </p>
 
         <h3 className="font-heading text-xl font-semibold mb-4">
-          About Us
+        At NexaTech Rwanda, we believe in the power of design to drive success. Our team is a diverse group of creatives and strategists, all dedicated to turning your vision into reality. Whether it's crafting a brand identity, developing a seamless user experience, or building a scalable product, we bring a wealth of experience and a fresh perspective to every project.
         </h3>
         <p className="text-muted-foreground leading-relaxed mb-8">
           At NexaTech Rwanda, we believe in the power of design to drive success. Our team is a diverse group of creatives and strategists, all dedicated to turning your vision into reality. Whether it's crafting a brand identity, developing a seamless user experience, or building a scalable product, we bring a wealth of experience and a fresh perspective to every project.
