@@ -45,7 +45,7 @@ const About = () => {
        {/* Our Story Section */}
 <section className="py-24 bg-background">
   <div className="container mx-auto px-6">
-    <h2 className="font-heading text-3xl md:text-4xl font-medium mb-16">
+    <h2 className="font-heading text-3xl md:text-4xl font-medium mb-8">
       Developers. Big Minds Discovers. Lifelong
       <br />
       learners Workers.
@@ -62,7 +62,7 @@ const About = () => {
         </p>
 
         <h3 className="font-heading text-xl font-semibold mb-4">
-        At NexaTech Rwanda, we believe in the power of design to drive success. Our team is a diverse group of creatives and strategists, all dedicated to turning your vision into reality. Whether it's crafting a brand identity, developing a seamless user experience, or building a scalable product, we bring a wealth of experience and a fresh perspective to every project.
+        About Us
         </h3>
         <p className="text-muted-foreground leading-relaxed mb-8">
           At NexaTech Rwanda, we believe in the power of design to drive success. Our team is a diverse group of creatives and strategists, all dedicated to turning your vision into reality. Whether it's crafting a brand identity, developing a seamless user experience, or building a scalable product, we bring a wealth of experience and a fresh perspective to every project.
