@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: "Bizimana Christian",
     role: "Chief Operation Officer - (COO)",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300&h=300&fit=crop&crop=face",
+    image: "./christ.png",
   },
   {
     name: "Dushimire Aine",

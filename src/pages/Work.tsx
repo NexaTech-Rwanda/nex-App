@@ -13,7 +13,7 @@ const Work = () => {
   return (
     <Layout>
       {/* ================= HERO-like section ================= */}
-      <section className="relative overflow-hidden pt-36 pb-24 text-black max-h-screen">
+      <section className="relative overflow-hidden pt-36 pb-24 text-black min-h-screen">
         {/*  Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -36,11 +36,10 @@ const Work = () => {
           {/* Heading */}
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h1 className="font-heading text-md md:text-4xl lg:text-4.5xl font-medium mb-16">
-              <span className="italic">Our work speaks for itself – Dive into the projects that define us.</span>
+              <span className="italic">Our work speaks for itself—dive into the projects that define us</span>
             </h1>
-            <p className="text-black text-lg md:text-xl max-w-2xl mx-auto">
-              Discover cutting-edge digital products we’ve built to transform
-              businesses across Rwanda and Africa.
+            <p className="text-black text-md md:text-xl max-w-2xl mt-[-2px] mx-auto">
+             Discover our cutting-edge projects that are transforming businesses across Rwanda and Africa
             </p>
           </div>
 
@@ -56,14 +55,14 @@ const Work = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-[340px] object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-450px h-350px object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Subtle hover overlay */}
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
+                <div className="p-7">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="font-heading text-2xl font-semibold">
                       {project.title}
