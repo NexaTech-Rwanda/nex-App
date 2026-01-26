@@ -1,85 +1,129 @@
 import Layout from "@/components/Layout";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const Work = () => {
-  const projects = [
-    {
-      title: "Shoppa",
-      category: "E-commerce",
-      image: "./shoppa.png",
-      description: "Shop smarter. Sell faster. Manage better.",
-    },
-  ];
-
   return (
     <Layout>
-      {/* ================= HERO-like section ================= */}
-      <section className="relative overflow-hidden pt-36 pb-24 text-black min-h-screen">
-        {/*  Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1')",
-          }}
-        />
-
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-background/70" />
-
-        
-
-        {/* Decorative gradients */}
-        <div className="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-muted/50 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-20 right-0 w-[28rem] h-[28rem] bg-gradient-to-bl from-muted/30 to-transparent rounded-full blur-3xl" />
-
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          {/* Heading */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <h1 className="font-heading text-md md:text-4xl lg:text-4.5xl font-medium mb-16">
-              <span className="italic">Our work speaks for itself—dive into the projects that define us</span>
-            </h1>
-            <p className="text-black text-md md:text-xl max-w-2xl mt-[-2px] mx-auto">
-             Discover our cutting-edge projects that are transforming businesses across Rwanda and Africa
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-          {/* ================= PROJECTS ================= */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className="group rounded-2xl bg-background shadow-sm hover:shadow-xl transition-all duration-500 relative z-10"
-              >
-                {/* Image */}
-                <div className="relative overflow-hidden rounded-t-2xl">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-450px h-350px object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  {/* Subtle hover overlay */}
-                  <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Left Column */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="font-serif text-6xl md:text-7xl text-navy">
+                  Shoppa
+                </h1>
+
+                <div className="flex gap-3">
+                  <span className="px-3 py-1 bg-muted text-[10px] font-medium rounded-md uppercase tracking-wider text-muted-foreground">
+                    Online Marketing
+                  </span>
+                  <span className="px-3 py-1 bg-muted text-[10px] font-medium rounded-md uppercase tracking-wider text-muted-foreground">
+                    Mobile App
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-medium mb-2">Overview</h3>
+                  <p className="text-muted-foreground leading-relaxed max-w-md">
+                    Shoppa helps different business owners and customers connect
+                    in one seamless mobile platform for free.
+                  </p>
                 </div>
 
-                {/* Content */}
-                <div className="p-7">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-heading text-2xl font-semibold">
-                      {project.title}
-                    </h3>
-                    <span className="text-sm px-3 py-1 rounded-full bg-muted text-muted-foreground">
-                      {project.category}
-                    </span>
-                  </div>
+                <div>
+                  <h3 className="text-xl font-medium mb-2">Small Description</h3>
                   <p className="text-muted-foreground leading-relaxed max-w-md">
-                    {project.description}
+                    Shop smarter. Sell faster. Manage better.
                   </p>
                 </div>
               </div>
-            ))}
+
+              <div className="pt-8 border-t border-border flex gap-16">
+                <div>
+                  <h4 className="text-xl font-medium mb-1">Marketing</h4>
+                  <p className="text-sm text-muted-foreground">Industry</p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-medium mb-1">2025</h4>
+                  <p className="text-sm text-muted-foreground">Year</p>
+                </div>
+                <div>
+                  <h4 className="text-xl font-medium mb-1">Shoppa</h4>
+                  <p className="text-sm text-muted-foreground">Name</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="relative flex justify-center lg:justify-end">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="bg-white p-10 rounded-[40px] shadow-2xl max-w-md relative"
+              >
+                <div className="absolute -top-3 right-10 w-6 h-6 bg-blue-600 rounded-full border-4 border-white shadow-lg" />
+
+                <div className="space-y-6">
+                  <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted">
+                    <img
+                      src="/shoppa.png"
+                      alt="Avatar"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <p className="text-2xl font-serif leading-tight text-navy">
+                    "My present daily mistakes are the seeds of tomorrow's
+                    victory. Keep going."
+                  </p>
+
+                  <div>
+                    <h5 className="font-bold text-navy">Mugisha David</h5>
+                    <p className="text-sm text-muted-foreground">
+                      Founder of Royal Rwandans
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
           </div>
         </div>
       </section>
+
+      {/* ================= VISUAL SHOWCASE ================= */}
+      <section className="py-20">
+        <div className="rounded-[30px] relative overflow-hidden flex items-center justify-center p-4">
+          <img
+            src="/shoppa.png"
+            alt="Smartphone App"
+            className="max-w-screen max-h-screen object-fit opacity-80"
+          />
+        </div>
+      </section>
+
+      {/* ================= CTA SECTION ================= */}
+      {/* <section className="py-16 blue-gradient text-white text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-1xl md:text-2xl font-serif mb-3 max-w-1xl mx-auto leading-tight">
+            Why wait? Take the leap. Make your design process stress-free today.
+          </h2>
+
+          <Button
+            variant="outline"
+            className="bg-white text-blue-700 hover:bg-blue-50 border-white rounded-full px-10 py-6 text-sm font-bold tracking-wider"
+          >
+            Join Us
+          </Button>
+        </div>
+      </section> */}
     </Layout>
   );
 };

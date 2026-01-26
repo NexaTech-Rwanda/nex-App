@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom"; // ✅ added
 
 const navLinks = [
@@ -16,7 +17,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-4 inset-x-0 z-50 flex justify-center"
     >
-      <div className="flex items-center gap-8 bg-card/80 backdrop-blur-md rounded-full px-6 py-3 border border-border shadow-sm">
+      <div className="flex items-center gap-8 bg-card/80 backdrop-blur-md rounded-[25px] px-6 py-3 border border-border shadow-sm">
 
         {/* Logo → Home */}
         <Link
@@ -48,12 +49,23 @@ const Navbar = () => {
         </div>
 
         {/* Say Hi → Contact page */}
-        <Link to="/contact">
+        {/* <Link to="/contact">
           <Button variant="default" size="sm" className="rounded-full gap-2 cursor-pointer">
             <Phone className="w-4 h-4" />
             Say hi
           </Button>
-        </Link>
+        </Link> */}
+        <Link to="/contact">
+  <Button
+    variant="default"
+    size="sm"
+    className="rounded-full gap-2 cursor-pointer"
+  >
+      <ArrowRight className="w-4 h-4 text-blue-500" />
+    Say hi
+  </Button>
+</Link>
+
       </div>
     </motion.nav>
   );
