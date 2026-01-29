@@ -22,7 +22,7 @@ const Navbar = () => {
         {/* Logo → Home */}
         <Link
           to="/"
-          className="font-display font-semibold text-foreground cursor-pointer transition-colors duration-300"
+          className="font-serif font-semibold text-foreground cursor-pointer transition-colors duration-300"
         >
           NexaTech Rwanda
         </Link>
