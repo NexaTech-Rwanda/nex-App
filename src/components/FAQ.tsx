@@ -126,46 +126,7 @@ const FAQ = () => {
         />
       </div>
 
-      {/* CTA SECTION BELOW FAQ */}
-      <div className="container max-w-2xl text-center mt-24">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 0.7, y: 0 } : {}}
-          className="text-sm text-muted-foreground"
-        >
-          They trust us
-        </motion.span>
-
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2 }}
-          className="font-serif text-4xl md:text-5xl mt-3"
-        >
-          Real feedback, <span className="font-bold">real results.</span>
-        </motion.h3>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3 }}
-          className="text-muted-foreground mt-4 max-w-xl mx-auto"
-        >
-          Explore how businesses and individuals have achieved their goals with
-          our tailored solutions and exceptional support.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.4 }}
-          className="mt-8"
-        >
-          <Button size="lg" className="rounded-full px-10">
-            Book a call
-          </Button>
-        </motion.div>
-      </div>
+      
     </section>
   );
 };
