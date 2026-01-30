@@ -1,14 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "./ui/button";
-import { MessageSquare, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Hand, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <footer ref={ref} className="bg-[#0050aa] text-white py-16 border-t border-white/10">
+    <footer ref={ref} className="bg-[rgba(10,75,148,0.98)] text-white py-16 border-t border-white/10">
       <div className="container">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Brand & Contact Button */}
@@ -18,16 +19,18 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <h3 className="font-serif text-2xl font-medium mb-3">NexaTech Rwanda</h3>
+            <h3 className="font-serif text-2xl font-medium mb-3 text-white">NexaTech Rwanda</h3>
             <p className="text-white/80 text-sm mb-8 max-w-sm">
               Transforming Africa and Rwanda tech solutions
             </p>
-            <Button
-              className="rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 text-white gap-2 transition-all duration-300 backdrop-blur-sm px-6"
-            >
-              <MessageSquare className="w-4 h-4" />
-              Get in contact
-            </Button>
+            <Link to="/contact">
+              <Button
+                className="rounded-lg border border-white/10 bg-white/10 hover:bg-white/20 text-white gap-2 transition-all duration-300 backdrop-blur-sm px-6"
+              >
+                <Hand className="w-4 h-4" />
+                Get in contact
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Navigation */}
@@ -36,7 +39,7 @@ const Footer = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="font-medium mb-6 text-sm">Navigation</h4>
+            <h4 className="font-medium mb-6 text-sm text-white">Navigation</h4>
             <ul className="space-y-4 text-sm text-white/70">
               <li><a href="#home" className="hover:text-white transition-colors duration-300">Home</a></li>
               <li><a href="#about" className="hover:text-white transition-colors duration-300">About</a></li>
@@ -51,7 +54,7 @@ const Footer = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="font-medium mb-6 text-sm">Contacts</h4>
+            <h4 className="font-medium mb-6 text-sm text-white">Contacts</h4>
             <ul className="space-y-4 text-sm text-white/70">
               <li>+250723374650</li>
               <li>NexaTech347@gmail.com</li>

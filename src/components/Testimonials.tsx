@@ -2,36 +2,35 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Button } from "./ui/button";
-import { Hand } from "lucide-react";
+import { Hand, ArrowRight } from "lucide-react";
 import { useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 
 const testimonials = [
   {
-    name: "Mike Karanzi",
     role: "CEO | ShopWise",
-    image: "./mike.png",
+    image: "https://i.pravatar.cc/150?img=11",
     content:
       "The use of Shoppa made my Products Selling increase due to use of Shoppa through selling down my products and even dan selling went. Now 800% per month.",
   },
   {
     name: "Alex",
-    role: "CEO | Urumbiai Rwanda",
-    image: "./alex.png",
+    role: "CEO | Umuhinzi Rwanda",
+    image: "https://i.pravatar.cc/150?img=13",
     content:
       "The use of Shoppa made my Products Selling increase due to use of Shoppa through selling down my products and even dan selling went. Now 800% per month.",
   },
   {
     name: "Melissa Den",
     role: "Marketing Lead | Prime Life Insurance",
-    image: "./melissa.png",
+    image: "https://i.pravatar.cc/150?img=5",
     content:
       "The use of Shoppa made my Products Selling increase due to use of Shoppa through selling down my products and even dan selling went. Now 800% per month.",
   },
   {
     name: "Alex Divan",
-    role: "Sales Officer | Neeb",
-    image: "./divan.png",
+    role: "Sales Officer | Naeb",
+    image: "https://i.pravatar.cc/150?img=8",
     content:
       "The use of Shoppa made my Products Selling increase due to use of Shoppa through selling down my products and even dan selling went. Now 800% per month.",
   },
@@ -131,7 +130,7 @@ export default function Testimonials() {
                 >
                   <Link to="/contact" className="flex items-center gap-1.5 pointer-events-auto">
                     <span className="font-medium">Work with us</span>
-                    <span>→</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </motion.div>
 
