@@ -15,7 +15,7 @@ const Work = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 25, stiffness: 700 };
+  const springConfig = { stiffness: 150, damping: 15, mass: 0.1 }; // Smoother, floaty feel
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
@@ -60,9 +60,12 @@ const Work = () => {
             style={{
               x: cursorX,
               y: cursorY,
-              opacity: isHovering ? 1 : 0,
-              scale: isHovering ? 1 : 0.8,
             }}
+            animate={{
+              opacity: isHovering ? 1 : 0,
+              scale: isHovering ? 1 : 0.6,
+            }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
             className="absolute top-0 left-0 z-50 pointer-events-none hidden md:flex items-center gap-2 bg-[#4A4A4A] text-white px-6 py-3 rounded-full shadow-xl"
           >
             <span className="text-sm font-medium">Explore project</span>
