@@ -110,7 +110,7 @@ export default function Testimonials() {
                 initial={{ rotate: rotations[index % rotations.length] }}
                 whileHover={{ rotate: 0, y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="relative w-[340px] h-[420px] bg-white border border-gray-100 rounded-[32px] p-8 shadow-lg hover:shadow-2xl transition-all group cursor-none"
+                className="relative w-[340px] h-[360px] bg-white border border-gray-100 rounded-[32px] p-8 shadow-lg hover:shadow-2xl transition-all group cursor-none"
               >
                 {/* Mouse-following Button */}
                 <motion.div
@@ -144,11 +144,12 @@ export default function Testimonials() {
                   />
                 </div>
 
-                {/* Testimonial Text with Cool Jazz font */}
+                {/* Testimonial Text with Indie Flower font */}
                 <p
-                  className="text-[16px] leading-relaxed mb-8 text-gray-800"
+                  className="text-[17px] leading-relaxed mb-8 text-gray-800"
                   style={{
-                    fontFamily: "'Cool Jazz', sans-serif"
+                    fontFamily: "'Indie Flower', cursive",
+                    fontWeight: 600
                   }}
                 >
                   {t.content}

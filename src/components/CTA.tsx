@@ -9,51 +9,11 @@ const CTA = () => {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden py-32 blue-gradient"
+      className="relative overflow-hidden py-32 bg-[#0057B8]"
     >
-      {/* === Smoky rotating background === */}
-      <motion.div
-        className="absolute inset-0 z-0 flex items-center justify-center"
-        animate={{ rotate: 360 }}
-        transition={{
-          duration: 120, // slow & smooth
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      >
-        <div className="smoke-ring-main" />
-      </motion.div>
-
-      {/* Optional second layer for depth */}
-      <motion.div
-        className="absolute inset-0 z-0 flex items-center justify-center"
-        animate={{ rotate: -360 }}
-        transition={{
-          duration: 180,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      >
-        <div className="smoke-ring-secondary" />
-      </motion.div>
-
-      {/* Soft glowing accents */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.05, 0.1, 0.05],
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl -translate-y-1/2 z-10 mix-blend-screen"
-      />
-
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.05, 0.1, 0.05],
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute top-1/2 right-1/4 w-72 h-72 bg-white rounded-full blur-3xl -translate-y-1/2 z-10"
+      {/* Central Glow/Highlight */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/10 blur-[120px] rounded-full pointer-events-none"
       />
 
       {/* === Content === */}
@@ -64,11 +24,11 @@ const CTA = () => {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground mb-4">
-            Join Africa&apos;s Tech Revolution – Start Today!
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 leading-tight">
+            Join Africa's Tech Revolution — Start Today!
           </h2>
 
-          <p className="font-serif text-2xl md:text-3xl text-primary-foreground/80 mb-10">
+          <p className="font-serif text-2xl md:text-3xl text-white/90 mb-12">
             Through Joining NexaTech Rwanda
           </p>
 
@@ -78,9 +38,7 @@ const CTA = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full border-primary-foreground bg-primary-foreground text-primary px-10 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="rounded-xl bg-white text-black hover:bg-gray-100 px-12 h-14 text-lg font-medium shadow-xl transition-all duration-300 hover:scale-105"
             >
               Join Us
             </Button>
