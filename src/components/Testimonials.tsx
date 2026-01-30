@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Button } from "./ui/button";
 import { Hand } from "lucide-react";
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 
 const testimonials = [
@@ -43,6 +43,21 @@ const rotations = [-2, 1, -1, 2];
 export default function Testimonials() {
   const [paused, setPaused] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  // Mouse tracking for cursor follower
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springConfig = { stiffness: 150, damping: 15, mass: 0.1 };
+  const cursorX = useSpring(mouseX, springConfig);
+  const cursorY = useSpring(mouseY, springConfig);
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>, index: number) => {
+    if (hoveredIndex === index) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      mouseX.set(e.clientX - rect.left - 75);
+      mouseY.set(e.clientY - rect.top - 20);
+    }
+  };
 
   return (
     <section className="py-24 bg-[#Fdfbf7] overflow-hidden">
@@ -91,11 +106,35 @@ export default function Testimonials() {
                   setPaused(false);
                   setHoveredIndex(null);
                 }}
+                onMouseMove={(e) => handleMouseMove(e, index)}
                 initial={{ rotate: rotations[index % rotations.length] }}
                 whileHover={{ rotate: 0, y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="relative w-[340px] h-[420px] bg-white border border-gray-100 rounded-[32px] p-8 shadow-lg hover:shadow-2xl transition-all group"
+                className="relative w-[340px] h-[420px] bg-white border border-gray-100 rounded-[32px] p-8 shadow-lg hover:shadow-2xl transition-all group cursor-none"
               >
+                {/* Mouse-following Button */}
+                <motion.div
+                  style={{
+                    x: cursorX,
+                    y: cursorY,
+                  }}
+                  animate={{
+                    opacity: hoveredIndex === index ? 1 : 0,
+                    scale: hoveredIndex === index ? 1 : 0.6,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20
+                  }}
+                  className="absolute top-0 left-0 z-50 pointer-events-none hidden md:flex items-center gap-2 bg-[#4A4A4A] text-white px-4 py-2 rounded-full shadow-2xl backdrop-blur-sm text-xs"
+                >
+                  <Link to="/contact" className="flex items-center gap-1.5 pointer-events-auto">
+                    <span className="font-medium">Work with us</span>
+                    <span>→</span>
+                  </Link>
+                </motion.div>
+
                 {/* Square Avatar */}
                 <div className="w-16 h-16 mb-6 rounded-xl overflow-hidden bg-gray-100">
                   <img
@@ -115,47 +154,15 @@ export default function Testimonials() {
                   {t.content}
                 </p>
 
-                {/* Author Info - fades out on hover */}
-                <motion.div
-                  className="absolute bottom-8 left-8 right-8"
-                  animate={{
-                    opacity: hoveredIndex === index ? 0 : 1
-                  }}
-                  transition={{ duration: 0.2 }}
-                >
+                {/* Author Info */}
+                <div className="absolute bottom-8 left-8 right-8">
                   <div className="text-base font-medium text-[#1a1a1a] mb-1">
                     {t.name}
                   </div>
                   <div className="text-sm text-gray-500 font-light">
                     {t.role}
                   </div>
-                </motion.div>
-
-                {/* Hover Button - "Work with us" appears at bottom */}
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{
-                    opacity: hoveredIndex === index ? 1 : 0,
-                    y: hoveredIndex === index ? 0 : 10
-                  }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="absolute bottom-8 left-8 right-8 flex justify-center"
-                  style={{
-                    pointerEvents: hoveredIndex === index ? 'auto' : 'none'
-                  }}
-                >
-                  <Link to="/contact">
-                    <Button
-                      className="rounded-xl bg-gray-800/90 hover:bg-gray-900 text-white px-6 h-11 gap-2 shadow-lg text-[14px]"
-                      style={{
-                        fontFamily: "'Cool Jazz', sans-serif"
-                      }}
-                    >
-                      Work with us
-                      <span className="text-lg">→</span>
-                    </Button>
-                  </Link>
-                </motion.div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
