@@ -29,7 +29,7 @@ const About = () => {
         <div className="absolute inset-0 bg-primary/10" />
         <div className="absolute inset-0 bg-background/60" />
 
-        <div className="container mx-auto px-3 text-center  relative z-10 pt-20">
+        <div className="container mx-auto px-3 text-center max-w-3xl relative z-10 pt-20">
           <h1 className="font-serif text-base md:text-2xl lg:text-3xl font-normal mb-10 leading-loose text-[#0D0D0D]">
             We blend cutting-edge technology with African<br />
             innovation to build solutions that transform entire <br />
@@ -39,7 +39,7 @@ const About = () => {
             as Africa's premier tech destination.
           </h1>
 
-          <div className="relative max-w-3xl mx-auto">
+          <div className="relative max-w-3xl mx-auto pb-20">
             {/* Carousel Container */}
             <div className="relative flex overflow-hidden bg-secondary/50 rounded-md p-2 mask-linear">
               <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent z-10"></div>
