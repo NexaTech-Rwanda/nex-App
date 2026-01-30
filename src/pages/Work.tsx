@@ -1,129 +1,73 @@
-import { useState } from "react";
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
+const projects = [
+  {
+    title: "Shoppa",
+    category: "Shoppa",
+    image: "/shoppa.png",
+    slug: "shoppa"
+  },
+  // Add more projects here
+];
 
 const Work = () => {
-  const [showDescription, setShowDescription] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <Layout>
-      <section className="pt-40 pb-24">
-        <div className="container mx-auto px-6 space-y-20">
+      <section className="pt-32 pb-24 bg-white">
+        <div className="container mx-auto px-6">
 
-          {/* ================= HEADER ================= */}
-          <div className="text-center max-w-4xl mx-auto space-y-6">
-            <h1 className="font-serif text-5xl md:text-6xl text-navy leading-tight">
-              Our work speaks for itself—Dive into the projects that define us
+          {/* Header Section */}
+          <div className="text-center max-w-4xl mx-auto mb-20 space-y-6">
+            <h1 className="font-serif text-3xl md:text-5xl lg:text-5xl font-normal text-[#1A1A1A] leading-[1.15]">
+              Our work speaks for itself—dive into the<br className="hidden md:block" />
+              projects that define us
             </h1>
-            <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
-              Discover our cutting-edge projects that are transforming businesses across
-              Rwanda and Africa
+            <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+              Discover our cutting-edge projects that are transforming<br className="hidden md:block" />
+              businesses across Rwanda and Africa
             </p>
           </div>
 
-          {/* ================= IMAGE + BUTTON ================= */}
-          <div className="flex flex-col items-center space-y-6">
-            <img
-              src="/shoppa.png"
-              alt="Shoppa Preview"
-              className="w-full max-w-4xl rounded-[30px] shadow-xl"
-            />
-
-            <Button
-              onClick={() => setShowDescription(!showDescription)}
-              className="bg-blue-600 hover:bg-blue-700 text-white 
-                         rounded-full px-10 py-3 text-sm font-semibold shadow-lg"
-            >
-              {showDescription ? "Hide Description" : "View Description"}
-            </Button>
-          </div>
-
-          {/* ================= DESCRIPTION ================= */}
-          <AnimatePresence>
-            {showDescription && (
-              <motion.section
-                initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 40 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="mt-24 py-24 bg-muted/40 rounded-[60px]"
+          {/* Projects Grid */}
+          <div className="max-w-6xl mx-auto space-y-16">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="group cursor-pointer"
+                onDoubleClick={() => navigate(`/work/${project.slug}`)}
               >
-                <div className="container mx-auto px-6 space-y-20">
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-                    {/* ================= TEXT ================= */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="text-xl font-medium mb-2">Overview</h3>
-                        <p className="text-muted-foreground max-w-md">
-                          Shoppa helps different business owners and customers
-                          connect in one seamless mobile platform for free.
-                        </p>
-                      </div>
-
-                      <div>
-                        <h3 className="text-xl font-medium mb-2">Small Description</h3>
-                        <p className="text-muted-foreground">
-                          Shop smarter. Sell faster. Manage better.
-                        </p>
-                      </div>
-
-                      <div className="pt-6 border-t border-border flex gap-16">
-                        <div>
-                          <h4 className="text-xl font-medium">Marketing</h4>
-                          <p className="text-sm text-muted-foreground">Industry</p>
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-medium">2025</h4>
-                          <p className="text-sm text-muted-foreground">Year</p>
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-medium">Shoppa</h4>
-                          <p className="text-sm text-muted-foreground">Name</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* ================= TESTIMONIAL CARD ================= */}
-                    <div className="bg-white p-10 rounded-[40px] shadow-2xl max-w-md">
-                      <div className="space-y-6">
-                        <div className="w-16 h-16 rounded-lg overflow-hidden">
-                          <img
-                            src="/shoppa.png"
-                            alt="Avatar"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-
-                        <p className="text-xl font-serif text-navy">
-                          “My products selling increased due to use of Shoppa
-                          through listing down my products.”
-                        </p>
-
-                        <div>
-                          <h5 className="font-bold text-navy">Mugisha David</h5>
-                          <p className="text-sm text-muted-foreground">
-                            Owner of Kigali Market
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ================= IMAGE AFTER DESCRIPTION ================= */}
-                  <div className="flex justify-center">
+                {/* Image Container */}
+                <div className="bg-[#F5F5F3] rounded-[24px] overflow-hidden p-8 md:p-12 lg:p-16 mb-6 transition-transform duration-500 group-hover:scale-[1.01]">
+                  <div className="rounded-xl overflow-hidden shadow-2xl bg-white border border-gray-100">
                     <img
-                      src="/shoppa.png"
-                      alt="Shoppa App Full View"
-                      className="w-full max-w-5xl rounded-[30px] shadow-xl"
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto object-cover"
                     />
                   </div>
                 </div>
-              </motion.section>
-            )}
-          </AnimatePresence>
+
+                {/* Info Below Image */}
+                <div className="flex justify-between items-center px-2">
+                  <h3 className="font-serif text-xl md:text-2xl text-gray-900">
+                    {project.title}
+                  </h3>
+                  <span className="text-sm md:text-base text-gray-400 font-serif">
+                    {project.category}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </section>
     </Layout>
