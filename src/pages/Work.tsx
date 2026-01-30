@@ -12,19 +12,15 @@ const Work = () => {
         <div className="container mx-auto px-6 space-y-20">
 
           {/* ================= HEADER ================= */}
-         <div className="text-center max-w-4xl mx-auto space-y-6">
-  <h1 className="font-serif text-5xl md:text-6xl text-navy leading-tight">
-    Our work speaks for itself—dive into the projects that define us
-  </h1>
-
-
-
-  <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
-    Discover our cutting-edge projects that are transforming businesses across
-    Rwanda and Africa
-  </p>
-</div>
-
+          <div className="text-center max-w-4xl mx-auto space-y-6">
+            <h1 className="font-serif text-5xl md:text-6xl text-navy leading-tight">
+              Our work speaks for itself—Dive into the projects that define us
+            </h1>
+            <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
+              Discover our cutting-edge projects that are transforming businesses across
+              Rwanda and Africa
+            </p>
+          </div>
 
           {/* ================= IMAGE + BUTTON ================= */}
           <div className="flex flex-col items-center space-y-6">
@@ -46,93 +42,86 @@ const Work = () => {
           {/* ================= DESCRIPTION ================= */}
           <AnimatePresence>
             {showDescription && (
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
+              <motion.section
+                initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-16"
+                exit={{ opacity: 0, y: 40 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="mt-24 py-24 bg-muted/40 rounded-[60px]"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div className="container mx-auto px-6 space-y-20">
 
-                  {/* TEXT */}
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-medium mb-2">Overview</h3>
-                      <p className="text-muted-foreground max-w-md">
-                        Shoppa helps different business owners and customers
-                        connect in one seamless mobile platform for free.
-                      </p>
-                    </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-                    <div>
-                      <h3 className="text-xl font-medium mb-2">
-                        Small Description
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Shop smarter. Sell faster. Manage better.
-                      </p>
-                    </div>
-
-                    <div className="pt-6 border-t border-border flex gap-16">
-                      <div>
-                        <h4 className="text-xl font-medium">Marketing</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Industry
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-medium">2025</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Year
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-medium">Shoppa</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Name
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* TESTIMONIAL CARD */}
-                  <div className="bg-white p-10 rounded-[40px] shadow-2xl max-w-md">
+                    {/* ================= TEXT ================= */}
                     <div className="space-y-6">
-                      <div className="w-16 h-16 rounded-lg overflow-hidden">
-                        <img
-                          src="/shoppa.png"
-                          alt="Avatar"
-                          className="w-full h-full object-cover"
-                        />
+                      <div>
+                        <h3 className="text-xl font-medium mb-2">Overview</h3>
+                        <p className="text-muted-foreground max-w-md">
+                          Shoppa helps different business owners and customers
+                          connect in one seamless mobile platform for free.
+                        </p>
                       </div>
 
-                      <p className="text-xl font-serif text-navy">
-                        “My products selling increased due to use of Shoppa
-                        through listing down my products.”
-                      </p>
-
                       <div>
-                        <h5 className="font-bold text-navy">
-                          Mugisha David
-                        </h5>
-                        <p className="text-sm text-muted-foreground">
-                          Owner of Kigali Market
+                        <h3 className="text-xl font-medium mb-2">Small Description</h3>
+                        <p className="text-muted-foreground">
+                          Shop smarter. Sell faster. Manage better.
                         </p>
+                      </div>
+
+                      <div className="pt-6 border-t border-border flex gap-16">
+                        <div>
+                          <h4 className="text-xl font-medium">Marketing</h4>
+                          <p className="text-sm text-muted-foreground">Industry</p>
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-medium">2025</h4>
+                          <p className="text-sm text-muted-foreground">Year</p>
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-medium">Shoppa</h4>
+                          <p className="text-sm text-muted-foreground">Name</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* ================= TESTIMONIAL CARD ================= */}
+                    <div className="bg-white p-10 rounded-[40px] shadow-2xl max-w-md">
+                      <div className="space-y-6">
+                        <div className="w-16 h-16 rounded-lg overflow-hidden">
+                          <img
+                            src="/shoppa.png"
+                            alt="Avatar"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+
+                        <p className="text-xl font-serif text-navy">
+                          “My products selling increased due to use of Shoppa
+                          through listing down my products.”
+                        </p>
+
+                        <div>
+                          <h5 className="font-bold text-navy">Mugisha David</h5>
+                          <p className="text-sm text-muted-foreground">
+                            Owner of Kigali Market
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* ================= IMAGE AFTER DESCRIPTION ================= */}
-                <div className="flex justify-center">
-                  <img
-                    src="/shoppa.png"
-                    alt="Shoppa App Full View"
-                    className="w-full max-w-5xl rounded-[30px] shadow-xl"
-                  />
+                  {/* ================= IMAGE AFTER DESCRIPTION ================= */}
+                  <div className="flex justify-center">
+                    <img
+                      src="/shoppa.png"
+                      alt="Shoppa App Full View"
+                      className="w-full max-w-5xl rounded-[30px] shadow-xl"
+                    />
+                  </div>
                 </div>
-              </motion.div>
+              </motion.section>
             )}
           </AnimatePresence>
         </div>

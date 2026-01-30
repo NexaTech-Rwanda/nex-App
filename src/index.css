@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
+    --background: 0 0% 100%;
     --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
@@ -15,16 +15,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 30% 12%;
 
-    --primary: 217 100% 50%;
+    --primary: 212 100% 36.1%;
+    /* #0057B8 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 40 20% 96%;
     --secondary-foreground: 220 30% 12%;
 
-    --muted: 40 15% 94%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 220 10% 95%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 40 20% 96%;
+    --accent: 210 40% 96%;
     --accent-foreground: 220 30% 12%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,7 +33,7 @@
 
     --border: 220 15% 90%;
     --input: 220 15% 90%;
-    --ring: 217 100% 50%;
+    --ring: 215 90% 48%;
 
     --radius: 0.5rem;
 
@@ -43,6 +44,7 @@
     --font-sans: 'Inter', sans-serif;
   }
 
+  /* Dark mode overrides if needed, but keeping light default as per screenshot */
   .dark {
     --background: 220 30% 8%;
     --foreground: 40 20% 98%;
@@ -50,7 +52,7 @@
     --card-foreground: 40 20% 98%;
     --popover: 220 30% 12%;
     --popover-foreground: 40 20% 98%;
-    --primary: 217 100% 55%;
+    --primary: 215 90% 55%;
     --primary-foreground: 0 0% 100%;
     --secondary: 220 25% 18%;
     --secondary-foreground: 40 20% 98%;
@@ -62,7 +64,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 220 25% 20%;
     --input: 220 25% 20%;
-    --ring: 217 100% 55%;
+    --ring: 215 90% 55%;
   }
 }
 
@@ -76,7 +78,12 @@
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
   }
 }
@@ -91,7 +98,7 @@
   }
 
   .blue-gradient {
-   background: #0057B8;
+    background: #0057B8;
 
   }
 
@@ -105,16 +112,16 @@
     text-wrap: balance;
   }
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 .faq-bg {
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(245, 248, 255, 0.85) 50%,
-    rgba(230, 236, 255, 0.8) 100%
-  );
+  background: radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(245, 248, 255, 0.85) 50%,
+      rgba(230, 236, 255, 0.8) 100%);
   min-height: 100vh;
   width: 100%;
 }
@@ -123,14 +130,12 @@ html {
   width: 950px;
   height: 950px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.35) 0%,
-    rgba(255, 255, 255, 0.2) 20%,
-    rgba(255, 255, 255, 0.12) 35%,
-    rgba(255, 255, 255, 0.06) 50%,
-    transparent 65%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.12) 35%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 65%);
   filter: blur(100px);
   opacity: 0.55;
   mix-blend-mode: screen;
@@ -140,12 +145,10 @@ html {
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0.15) 30%,
-    transparent 60%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.15) 30%,
+      transparent 60%);
   filter: blur(90px);
   opacity: 0.45;
   mix-blend-mode: screen;
@@ -153,10 +156,10 @@ html {
 
 
 .notfound-bg {
-  background-image: url("/notfound-bg.png"); /* <-- your image */
+  background-image: url("/notfound-bg.png");
+  /* <-- your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   filter: contrast(1.1) brightness(1.05);
 }
-

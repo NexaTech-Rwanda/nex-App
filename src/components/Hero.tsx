@@ -78,8 +78,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-muted-foreground text-xl max-w-2xl mx-auto mb-12"
           >
-            Transform Africa's tech with NexaTech 
-            Rwanda's innovative solutions.We're creating the ecosystem 
+            Transform Africa's tech with NexaTech
+            Rwanda's innovative solutions.We're creating the ecosystem
             that will make Rwanda the brain of Africa's technological revolution.
           </motion.p>
 
@@ -106,30 +106,30 @@ const Hero = () => {
           >
             <div className="flex -space-x-3">
 
-              <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="flex flex-col items-center gap-3"
-          >
-            <div className="flex -space-x-2">
-              <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
-                <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" />
-                <AvatarFallback>U1</AvatarFallback>
-              </Avatar>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="flex flex-col items-center gap-3"
+              >
+                <div className="flex -space-x-2">
+                  <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
+                    <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" />
+                    <AvatarFallback>U1</AvatarFallback>
+                  </Avatar>
 
-              <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
-                <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" />
-                <AvatarFallback>U2</AvatarFallback>
-              </Avatar>
+                  <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
+                    <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" />
+                    <AvatarFallback>U2</AvatarFallback>
+                  </Avatar>
 
-              <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
-                <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" />
-                <AvatarFallback>U3</AvatarFallback>
-              </Avatar>
-            </div>
-            <span className="text-sm text-muted-foreground">Trusted by 30+ Clients</span>
-          </motion.div>
+                  <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
+                    <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" />
+                    <AvatarFallback>U3</AvatarFallback>
+                  </Avatar>
+                </div>
+                <span className="text-sm text-muted-foreground">Trusted by 30+ Clients</span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
