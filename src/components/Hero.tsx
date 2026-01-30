@@ -91,7 +91,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="rounded-full px-10 py-6 text-lg mb-14 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="rounded-full bg-[#0057B8] hover:bg-[#0057B8]/90 text-white text-base px-6 py-2 h-auto shadow-[0_20px_40px_-15px_rgba(var(--primary),0.3)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mb-5"
             >
               Join Us
             </Button>

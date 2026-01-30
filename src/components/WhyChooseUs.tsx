@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "./ui/button";
-import { Smartphone, Plus, Heart } from "lucide-react";
+import { Plus, Heart, Hand, Pencil } from "lucide-react";
 
 const features = [
   {
-    icon: Smartphone,
+    icon: Pencil,
     title: "AI-Powered Business Solutions",
     description: "We build smart automation solutions for African enterprises to Rwanda's thriving tech ecosystem.",
   },
@@ -27,49 +27,90 @@ const WhyChooseUs = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 cream-section">
-      <div className="container">
-        {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="max-w-xl mb-16"
-        >
-          <span className="section-badge mb-4">Why choose us</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-6">
-            Digital Solutions for Africa
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            NexaTech Rwanda pioneers Africa's digital transformation by delivering innovative tech solutions that empower businesses and governments for sustainable development.
-          </p>
-          <div className="flex items-center gap-4">
-            <Button className="rounded-full gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-              Get started
-            </Button>
-            <Button variant="outline" className="rounded-full transition-all duration-300 hover:scale-105">
-              How we work?
-            </Button>
-          </div>
-        </motion.div>
+    <section ref={ref} className="py-16 relative bg-[#F9F8F6] overflow-hidden">
+      {/* Background Dots */}
+      <div
+        className="absolute inset-0 z-0 opacity-[0.4]"
+        style={{
+          backgroundImage: "radial-gradient(#E5E5E5 1px, transparent 1px)",
+          backgroundSize: "20px 20px"
+        }}
+      />
+
+      <div className="container relative z-10">
+
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="max-w-xl"
+          >
+            <div className="inline-block px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm text-[11px] font-medium text-gray-600 mb-4 shadow-sm">
+              Why choose us
+            </div>
+
+            <h2 className="font-serif text-4xl md:text-5xl font-normal text-foreground mb-4 leading-[1.1]">
+              Digital Solutions for Africa
+            </h2>
+
+            <p className="text-muted-foreground text-base leading-relaxed max-w-lg mb-6">
+              NexaTech Rwanda pioneers Africa's digital transformation by delivering
+              innovative tech solutions that empower businesses and governments
+              for sustainable development.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <Button
+                className="rounded-xl bg-[#0057B8]/90 hover:bg-[#0057B8] text-white px-6 h-11 gap-2 shadow-lg shadow-blue-900/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-sm"
+              >
+                <Hand className="w-4 h-4" />
+                Get started
+              </Button>
+
+              <Button
+                variant="outline"
+                className="rounded-xl border-gray-200 bg-transparent text-foreground hover:bg-white/50 px-6 h-11 text-sm transition-all duration-300"
+              >
+                How we work ?
+              </Button>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="text-center group"
+              transition={{ duration: 0.6, delay: 0.2 + (index * 0.15) }}
+              className="flex flex-col items-center text-center group"
             >
-              <div className="w-12 h-12 rounded-full border border-border bg-card flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-primary group-hover:shadow-md">
-                <feature.icon className="w-5 h-5 text-foreground transition-colors group-hover:text-primary" />
-              </div>
-              <h3 className="font-serif text-lg font-medium text-foreground mb-2">
+              {/* Animated Icon Container */}
+              <motion.div
+                whileTap={{ rotate: 360, scale: 0.9 }}
+                whileHover={{ rotate: 10, scale: 1.05 }}
+                animate={{
+                  y: [0, -5, 0],
+                  rotate: [0, 8, -8, 0]
+                }}
+                transition={{
+                  y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.5 },
+                  rotate: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }
+                }}
+                className="w-14 h-14 rounded-[18px] bg-white border border-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] flex items-center justify-center mb-5 transition-all duration-500 hover:shadow-lg hover:shadow-blue-100/50 cursor-pointer"
+              >
+                <feature.icon className="w-6 h-6 text-[#0057B8]/80" strokeWidth={1.5} />
+              </motion.div>
+
+              <h3 className="font-serif text-xl font-medium text-foreground mb-3">
                 {feature.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+
+              <p className="text-muted-foreground leading-relaxed max-w-sm text-sm">
                 {feature.description}
               </p>
             </motion.div>

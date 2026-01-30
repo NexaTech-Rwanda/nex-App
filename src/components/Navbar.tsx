@@ -31,7 +31,7 @@ const Navbar = () => {
           {/* Home link */}
           <Link
             to="/"
-            className="text-[13px] font-medium text-black hover:bg-black/5 px-3 py-1.5 rounded-md transition-all duration-200"
+            className="text-[13px] font-medium text-black/80 hover:text-[#0057B8] hover:bg-blue-50 px-3 py-1.5 rounded-md transition-all duration-200"
           >
             Home
           </Link>
@@ -39,14 +39,14 @@ const Navbar = () => {
           {/* About */}
           <Link
             to="/about"
-            className="text-[13px] font-medium text-[#0057B8] bg-blue-50 px-3 py-1.5 rounded-md transition-all duration-200"
+            className="text-[13px] font-medium text-black/80 hover:text-[#0057B8] hover:bg-blue-50 px-3 py-1.5 rounded-md transition-all duration-200"
           >
             About
           </Link>
 
           <Link
             to="/work"
-            className="text-[13px] font-medium text-black hover:bg-black/5 px-3 py-1.5 rounded-md transition-all duration-200"
+            className="text-[13px] font-medium text-black/80 hover:text-[#0057B8] hover:bg-blue-50 px-3 py-1.5 rounded-md transition-all duration-200"
           >
             Work
           </Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
         {/* Say Hi Button */}
         <Link to="/contact" className="ml-1">
           <Button
-            className="rounded-[10px] bg-[#0057B8] hover:bg-[#004694] text-white font-serif font-medium px-4 h-[36px] gap-2 shadow-sm transition-all duration-300 text-[13px]"
+            className="rounded-[10px] bg-[#0057B8]/90 hover:bg-[#0057B8] text-white font-serif font-medium px-4 h-[36px] gap-2 shadow-sm transition-all duration-300 text-[13px]"
           >
             <CornerDownRight className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
             Say hi
