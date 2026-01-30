@@ -235,8 +235,8 @@ const About = () => {
 
             <div className="text-center mt-16">
               <Link to="/contact">
-                <Button className="rounded-xl px-10 py-6 h-auto bg-[#0057B8] hover:bg-[#004494] text-white font-medium shadow-lg hover:shadow-blue-200 transition-all duration-300 gap-3">
-                  <Hand className="w-4 h-4" strokeWidth={2} />
+                <Button className="rounded-xl px-10 py-4 h-auto bg-[#0057B8] hover:bg-[#004494] text-white font-medium shadow-lg hover:shadow-blue-200 transition-all duration-300 gap-3">
+                  <Hand className="w-2 h-2" strokeWidth={2} />
                   Book a call
                 </Button>
               </Link>
