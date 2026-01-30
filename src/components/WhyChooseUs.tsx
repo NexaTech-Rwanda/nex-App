@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
               Why choose us
             </div>
 
-            <h2 className="font-serif text-4xl md:text-5xl font-normal text-foreground mb-4 leading-[1.1]">
+            <h2 className="font-serif text-4xl md:text-5xl font-normal text-[#4A4A4A] mb-4 leading-[1.1]">
               Digital Solutions for Africa
             </h2>
 
@@ -92,18 +92,25 @@ const WhyChooseUs = () => {
               {/* Animated Icon Container */}
               <motion.div
                 whileTap={{ rotate: 360, scale: 0.9 }}
-                whileHover={{ rotate: 10, scale: 1.05 }}
-                animate={{
-                  y: [0, -5, 0],
-                  rotate: [0, 8, -8, 0]
-                }}
+                whileHover={{ scale: 1.05 }}
+                animate={
+                  index === 0
+                    ? { y: [0, -5, 0], rotate: [0, 15, -10, 0] } // Pencil: Swing
+                    : index === 1
+                      ? { y: [0, -5, 0], scale: [1, 1.2, 1], rotate: [0, 90, 0] } // Plus/Star: Zoom + Spin
+                      : { y: [0, -5, 0], scale: [1, 1.15, 1] } // Heart: Zoom (Heartbeat)
+                }
                 transition={{
                   y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.5 },
-                  rotate: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }
+                  rotate: { duration: index === 1 ? 5 : 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 },
+                  scale: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 },
                 }}
                 className="w-14 h-14 rounded-[18px] bg-white border border-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] flex items-center justify-center mb-5 transition-all duration-500 hover:shadow-lg hover:shadow-blue-100/50 cursor-pointer"
               >
-                <feature.icon className="w-6 h-6 text-[#0057B8]/80" strokeWidth={1.5} />
+                <feature.icon
+                  className={`text-[#0057B8]/80 ${index === 2 ? "w-5 h-5" : "w-6 h-6"}`}
+                  strokeWidth={1.5}
+                />
               </motion.div>
 
               <h3 className="font-serif text-xl font-medium text-foreground mb-3">

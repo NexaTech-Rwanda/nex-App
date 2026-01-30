@@ -66,9 +66,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8 leading-tight"
+            className="font-serif text-5xl md:text-7xl lg:text-[80px] font-normal text-[#4A4A4A] mb-8 leading-[1.1] tracking-tight"
           >
-            Building Africa's Tech Ecosystem From Rwanda
+            Building Africa&apos;s Tech Ecosystem <br className="hidden md:block" /> From Rwanda
           </motion.h1>
 
           {/* Subtext */}
@@ -76,11 +76,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-muted-foreground text-xl max-w-2xl mx-auto mb-12"
+            className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light"
           >
-            Transform Africa's tech with NexaTech
-            Rwanda's innovative solutions.We're creating the ecosystem
-            that will make Rwanda the brain of Africa's technological revolution.
+            Transform Africa&apos;s tech with NexaTech
+            Rwanda&apos;s innovative solutions. We&apos;re creating the tech ecosystem
+            that will make Rwanda the brain of Africa&apos;s technological revolution.
           </motion.p>
 
           {/* CTA Button */}
