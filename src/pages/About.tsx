@@ -4,7 +4,7 @@ import FeatureCard from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
-import { Lightbulb, Users, Trophy, Cpu, Rocket, Phone } from "lucide-react";
+import { Lightbulb, Users, Trophy, Cpu, Rocket, Phone, Hand } from "lucide-react";
 
 const notFoundBg = "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1";
 const randomTeamLead = "https://source.unsplash.com/400x400/?person,portrait";
@@ -23,215 +23,227 @@ const About = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative max-h-screen flex items-center justify-center pt-20 pb-20">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${notFoundBg})`, opacity: 0.18 }} />
-        <div className="absolute inset-0 bg-primary/10" />
-        <div className="absolute inset-0 bg-background/60" />
+      <div className="max-w-screen mx-auto">
+        {/* Hero Section */}
+        <section className="relative flex items-center justify-center pt-10 pb-28 pt-28">
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${notFoundBg})`, opacity: 0.18 }} />
+          <div className="absolute inset-0 bg-primary/10" />
+          <div className="absolute inset-0 bg-background/60" />
 
-        <div className="container mx-auto px-3 text-center max-w-3xl relative z-10 pt-20">
-          <h1 className="font-serif text-base md:text-2xl lg:text-3xl font-normal mb-10 leading-loose text-[#0D0D0D]">
-            We blend cutting-edge technology with African<br />
-            innovation to build solutions that transform entire <br />
-            business ecosystems. Our commitment to excellence,<br />
-            scalability, and sustainability ensures every tech <br />
-            solution we create contributes to Rwanda's emergence<br />
-            as Africa's premier tech destination.
-          </h1>
+          <div className="container mx-auto px-7 text-center max-w-3xl relative z-10 pt-8">
+            <h1 className="font-serif text-sm md:text-base lg:text-lg font-normal mb-6 leading-relaxed text-[#0D0D0D]">
+              We blend cutting-edge technology with African<br />
+              innovation to build solutions that transform entire <br />
+              business ecosystems. Our commitment to excellence,<br />
+              scalability, and sustainability ensures every tech <br />
+              solution we create contributes to Rwanda's emergence<br />
+              as Africa's premier tech destination.
+            </h1>
 
-          <div className="relative max-w-3xl mx-auto pb-20">
-            {/* Carousel Container */}
-            <div className="relative flex overflow-hidden bg-secondary/50 rounded-md p-2 mask-linear">
-              <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent z-10"></div>
-              <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background to-transparent z-10"></div>
+            <div className="relative max-w-xl mx-auto pb-8">
+              {/* Carousel Container */}
+              <div className="relative flex overflow-hidden bg-secondary/50 rounded-md p-1 mask-linear">
+                <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-background to-transparent z-10"></div>
+                <div className="absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-background to-transparent z-10"></div>
 
-              <div className="flex gap-4 animate-scroll whitespace-nowrap">
-                {/* Duplicate items for seamless scrolling */}
-                {[...services, ...services, ...services].map((service, index) => (
-                  <div key={`${service}-${index}`} className="flex-shrink-0 bg-white rounded-full">
-                    <ServiceTag label={service} />
+                <div className="flex gap-2 animate-scroll whitespace-nowrap">
+                  {/* Duplicate items for seamless scrolling */}
+                  {[...services, ...services, ...services].map((service, index) => (
+                    <div key={`${service}-${index}`} className="flex-shrink-0 bg-white rounded-full">
+                      <ServiceTag label={service} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Story Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* TEXT COLUMN */}
+              <div className="flex flex-col justify-center">
+                <h2 className="font-serif text-3xl md:text-4xl font-normal mb-8 text-[#0D0D0D] leading-tight">
+                  Developers. Big Minds Discovers. Lifelong
+                  <br className="hidden md:block" />
+                  learners Workers.
+                </h2>
+
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="font-heading text-lg font-semibold mb-3">
+                      Our Story
+                    </h3>
+                    <p className="text-muted-foreground text-sm font-serif leading-relaxed">
+                      Founded with a passion for solving african problemsand a commitment to innovation, our team has grown from a small team of enthusiasts to a leading design studio. Over the years, we've partnered with startups and companies at every stage, helping them scale by delivering cutting-edge digital products and solutions. Our journey is fueled by creativity, collaboration, and a relentless pursuit of excellence.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-heading text-lg font-semibold mb-3">
+                      About Us
+                    </h3>
+                    <p className="text-muted-foreground text-sm font-serif leading-relaxed">
+                      At NexaTech Rwanda, we believe in the power of design to drive success. Our team is a diverse group of creatives and strategists, all dedicated to turning your vision into reality. Whether it's crafting a brand identity, developing a seamless user experience, or building a scalable product, we bring a wealth of experience and a fresh perspective to every project.
+                    </p>
+                  </div>
+
+                  <Link to="/about">
+                    <Button className="rounded-large px-9 py-2 text-base h-auto 
+               bg-[#0057B8] hover:bg-[#004494] 
+               text-white font-semibold 
+               shadow-md hover:shadow-lg 
+               transition duration-300 ease-in-out 
+               mt-5">
+                      Join Us
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* IMAGE COLUMN */}
+              <div className="relative flex justify-end items-start h-full pt-4">
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="w-full"
+                >
+                  <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-2 border border-gray-100">
+                    <img
+                      src="./team-lead.jpg"
+                      alt="NexaTech team member"
+                      className="w-full aspect-square object-cover rounded-xl"
+                    />
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="py-10 bg-white overflow-hidden">
+          <div className="container mx-auto px-6 text-center">
+            <div className="mb-2">
+              <span className="section-badge px-2 py-0.5 rounded-full text-[9px] font-medium border border-[#0057B8]/20 text-[#0057B8] bg-[#0057B8]/5">
+                Our Developers
+              </span>
+            </div>
+
+            <h2 className="font-serif text-xl md:text-2xl font-normal mb-3 text-[#0D0D0D] leading-tight">
+              Meet Our Developers Who Are Changing <br /> Africa Tech
+            </h2>
+
+            <p className="text-muted-foreground text-xs md:text-sm max-w-lg mx-auto mb-8 font-serif">
+              Get to know the visionaries dedicated to making Rwanda the <br /> continent's premier tech hub.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              {[
+                { name: "Alain", role: "Developer", image: "/munyakazi.png" },
+                { name: "Yvan", role: "Developer", image: "/aine.png" },
+                { name: "Paola", role: "Developer", image: "/team4.png" },
+
+                { name: "Nikita", role: "Designer", image: "/team1.png" },
+                { name: "Roger", role: "Developer", image: "/livia.png" },
+                { name: "Nelson", role: "Developer", image: "/team2.png" },
+
+                { name: "Jeremy", role: "Designer", image: "/team1.png" },
+                { name: "Corene", role: "Developer", image: "/team3.png" },
+                { name: "Duff", role: "Developer", image: "/team5.png" },
+              ].map((member, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="group relative bg-white rounded-[1.5rem] p-3 shadow-[0_5px_20px_-10px_rgba(0,0,0,0.1)] transition-all duration-500"
+                >
+                  <div className="aspect-[3/4] overflow-hidden rounded-[1.2rem] relative bg-gray-50">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    />
+
+                    {/* Speech Bubble Name Tag on Hover */}
+                    <div className="absolute inset-x-0 bottom-4 flex justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 z-20">
+                      <div className="relative bg-white px-4 py-1.5 rounded-xl shadow-lg">
+                        <span className="font-heading text-xs font-bold text-gray-900 whitespace-nowrap">
+                          Hi! I'm {member.name}
+                        </span>
+                        {/* Little triangle for bubble effect */}
+                        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-24 relative bg-[#F8F7F4] overflow-hidden">
+          {/* Cloudy Background Effect at bottom */}
+          <div className="absolute bottom-0 left-0 w-full h-[400px] z-0 opacity-40 pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+            <div className="absolute bottom-[-10%] left-[-10%] w-[120%] h-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-100/20 via-transparent to-transparent blur-3xl" />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-16">
+              <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-[10px] uppercase tracking-wider font-semibold text-gray-500 shadow-sm mb-6 inline-block">
+                Features
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-5xl font-normal mb-6 text-[#1A1A1A]">
+                What sets us apart?
+              </h2>
+              <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                Every detail counts. Discover how our tailored solutions elevate your brand, <br className="hidden md:block" />
+                ensuring flawless execution and stunning results.
+              </p>
+            </div>
+
+            {/* Features Unified Grid */}
+            <div className="max-w-6xl mx-auto bg-white border border-gray-100 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-3 border-b border-gray-100">
+                {features.slice(0, 3).map((feature, idx) => (
+                  <div key={feature.title} className={`p-10 ${idx !== 2 ? 'md:border-r border-gray-100' : ''}`}>
+                    <feature.icon className="w-5 h-5 text-gray-800 mb-6" strokeWidth={1} />
+                    <h3 className="font-serif text-2xl font-normal mb-4 text-gray-900">{feature.title}</h3>
+                    <p className="text-gray-500 text-[13px] leading-relaxed font-serif">
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {features.slice(3).map((feature, idx) => (
+                  <div key={feature.title} className={`p-10 ${idx === 0 ? 'md:border-r border-gray-100' : ''}`}>
+                    <feature.icon className="w-5 h-5 text-gray-800 mb-6" strokeWidth={1} />
+                    <h3 className="font-serif text-2xl font-normal mb-4 text-gray-900">{feature.title}</h3>
+                    <p className="text-gray-500 text-[13px] leading-relaxed font-serif">
+                      {feature.description}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Our Story Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-medium mb-8">
-            Developers. Big Minds Discovers. Lifelong
-            <br />
-            learners Workers.
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* TEXT COLUMN — UNCHANGED */}
-            <div>
-              <h3 className="font-heading text-xl font-semibold mb-4">
-                Our Story
-              </h3>
-              <p className="text-muted-foreground font-serif leading-relaxed mb-8">
-                Founded with a passion for solving african problemsand a commitment to innovation, our team has grown from a small team of enthusiasts to a leading design studio. Over the years, we've partnered with startups and companies at every stage, helping them scale by delivering cutting-edge digital products and solutions. Our journey is fueled by creativity, collaboration, and a relentless pursuit of excellence.
-              </p>
-
-              <h3 className="font-heading text-xl font-semibold mb-4">
-                About Us
-              </h3>
-              <p className="text-muted-foreground font-serif leading-relaxed mb-8">
-                At NexaTech Rwanda, we believe in the power of design to drive success. Our team is a diverse group of creatives and strategists, all dedicated to turning your vision into reality. Whether it's crafting a brand identity, developing a seamless user experience, or building a scalable product, we bring a wealth of experience and a fresh perspective to every project.
-              </p>
-
-              <Link to="/about">
-                <Button className="rounded-full">Join Us</Button>
+            <div className="text-center mt-16">
+              <Link to="/contact">
+                <Button className="rounded-xl px-10 py-6 h-auto bg-[#0057B8] hover:bg-[#004494] text-white font-medium shadow-lg hover:shadow-blue-200 transition-all duration-300 gap-3">
+                  <Hand className="w-4 h-4" strokeWidth={2} />
+                  Book a call
+                </Button>
               </Link>
             </div>
-
-            {/* IMAGE COLUMN — PUSHED TO RIGHT END */}
-            <div className="relative flex justify-end items-center h-full">
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full max-w-sm lg:max-w-md"
-              >
-                <div className="rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                  <img
-                    src="./team-lead.jpg"
-                    alt="NexaTech team member"
-                    className="w-[700px] h-[560px] object-cover"
-                  />
-                </div>
-              </motion.div>
-            </div>
           </div>
-        </div>
-      </section>
-
-
-
-      {/* Team Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="container mx-auto px-6 text-center">
-          <h3 className="font-heading text-2xl md:text-3xl font-medium mb-4">
-            Our Developers
-          </h3>
-
-          <h2 className="font-heading text-3xl md:text-4xl font-medium mb-4">
-            Meet Our Developers Who Are Changing Africa Tech
-          </h2>
-
-          <p className="text-muted-foreground max-w-xl mx-auto mb-16">
-            Get to know the visionaries dedicated to making Rwanda the continent's premier tech hub.
-          </p>
-
-          {/* 3x3 Overlapping Grid */}
-          <div className="grid grid-cols-3 gap-y-16 max-w-3xl mx-auto">
-            {Array.from({ length: 9 }).map((_, index) => {
-              const rotations = [
-                "-rotate-6",
-                "-rotate-2",
-                "rotate-4",
-                "rotate-3",
-                "-rotate-5",
-                "rotate-2",
-                "-rotate-3",
-                "rotate-5",
-                "-rotate-4",
-              ];
-
-              const offsets = [
-                "-ml-6",
-                "ml-0",
-                "ml-6",
-                "-ml-4",
-                "ml-2",
-                "ml-6",
-                "-ml-6",
-                "ml-0",
-                "ml-4",
-              ];
-
-              return (
-                <div
-                  key={index}
-                  className={`
-              relative
-              w-40 sm:w-44
-              rounded-2xl
-              overflow-hidden
-              border border-border
-              bg-white
-              shadow-md
-              transform
-              ${rotations[index]}
-              ${offsets[index]}
-              transition-all duration-300
-              hover:rotate-0 hover:scale-105 hover:z-20
-            `}
-                >
-                  <img
-                    src={`https://api.dicebear.com/7.x/personas/svg?seed=dev-${index}`}
-                    alt={`Developer ${index + 1}`}
-                    className="w-full h-40 object-cover bg-muted"
-                  />
-
-                  <div className="p-3 text-center">
-                    <h4 className="font-medium text-sm">
-                      Developer {index + 1}
-                    </h4>
-                    <p className="text-xs text-muted-foreground">
-                      Software Engineer
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-24 relative">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${notFoundBg})`, opacity: 0.18 }} />
-        <div className="absolute inset-0 bg-primary/10" />
-        <div className="absolute inset-0 bg-background/60" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <h3 className="font-heading text-2xl md:text-3xl font-medium mb-4 text-center">
-            Features
-          </h3>
-          <h2 className="font-heading text-3xl md:text-4xl font-medium mb-4 text-center">
-            What sets us apart?
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-center mb-12">
-            Every detail counts. Discover how our tailored solutions elevate your brand, ensuring flawless execution and stunning results.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.slice(0, 3).map((feature) => (
-              <FeatureCard key={feature.title} {...feature} />
-            ))}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
-            {features.slice(3).map((feature) => (
-              <FeatureCard key={feature.title} {...feature} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link to="/contact">
-              <Button className="rounded-full gap-2">
-                <Phone className="w-4 h-4" />
-                Book a call
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Layout>
   );
 };
