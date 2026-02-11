@@ -1,0 +1,19 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+    branches: [main, master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Deploying to Production
+        run: echo "Starting deployment to production environment..."
+      # Add actual deployment steps here (e.g., Vercel, Netlify, GH Pages)
+      - name: Completion
+        run: echo "Deployment workflow triggered successfully."

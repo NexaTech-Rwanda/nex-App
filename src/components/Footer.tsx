@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "./ui/button";
-import { Hand, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Hand, Twitter, Instagram, Linkedin, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -21,7 +21,7 @@ const Footer = () => {
           >
             <h3 className="font-serif text-2xl font-medium mb-3 text-white">NexaTech Rwanda</h3>
             <p className="text-white/80 text-sm mb-8 max-w-sm">
-              Transforming Africa and Rwanda tech solutions
+              Engineering Scalable, Ready-to-Market Solutions for Africa's Future.
             </p>
             <Link to="/contact">
               <Button
@@ -43,8 +43,8 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-white/70">
               <li><a href="#home" className="hover:text-white transition-colors duration-300">Home</a></li>
               <li><a href="#about" className="hover:text-white transition-colors duration-300">About</a></li>
-              <li><a href="#work" className="hover:text-white transition-colors duration-300">Work</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors duration-300">Contact</a></li>
+              <li><a href="/work" className="hover:text-white transition-colors duration-300" onClick={(e) => { e.preventDefault(); window.location.href = '/work'; }}>Project</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors duration-300" onClick={(e) => { e.preventDefault(); window.location.href = '/contact'; }}>Contact</a></li>
             </ul>
           </motion.div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
             <h4 className="font-medium mb-6 text-sm text-white">Contacts</h4>
             <ul className="space-y-4 text-sm text-white/70">
               <li>+250723374650</li>
-              <li>NexaTech347@gmail.com</li>
+              <li>info@nexatech.co.rw</li>
               <li>Rwanda</li>
             </ul>
           </motion.div>
@@ -70,13 +70,19 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-xs text-white/60"
         >
-          <p>© 2025 All rights reserved</p>
+          <p>© 2026 All rights reserved</p>
           <p className="hidden md:block">NexaTech Rwanda</p>
           <div className="flex items-center gap-6">
-            {[Twitter, Instagram, Linkedin].map((Icon, index) => (
+            {[
+              { Icon: Instagram, href: "https://www.instagram.com/nexa_tech.co/" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/company/nexatechrwanda" },
+              { Icon: MessageSquare, href: "https://wa.me/250723374650" }
+            ].map(({ Icon, href }, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -2 }}
                 className="text-white/80 hover:text-white transition-colors duration-300"
               >

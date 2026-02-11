@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
 import { Lightbulb, Users, Trophy, Cpu, Rocket, Phone, Hand } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const notFoundBg = "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1";
 const randomTeamLead = "https://source.unsplash.com/400x400/?person,portrait";
@@ -14,15 +15,19 @@ const About = () => {
   const services = ["AI Solutions", "Cloud Solutions", "Tech Solutions", "Web Development", "Mobile Apps"];
 
   const features = [
-    { icon: Lightbulb, title: "Strategic Project Thinking", description: "We design with your business goals in mind, ensuring impactful results." },
-    { icon: Users, title: "Collaborative Process", description: "We work closely with you, blending your vision with our creative expertise." },
-    { icon: Trophy, title: "Proven Track Record", description: "Our success is reflected in the achievements of our satisfied clients." },
-    { icon: Cpu, title: "Modern Technology", description: "Leveraging cutting-edge technology to enhance efficiency, precision, and sustainability in every project." },
+    { icon: Lightbulb, title: "Strategic Project Thinking", description: "Each digital system is architected for market readiness and scalability from day one." },
+    { icon: Users, title: "User-Centric African Architecture", description: "Solutions designed specifically for the unique needs and workflows of the African market." },
+    { icon: Trophy, title: "Scalable Pan-African Infrastructure", description: "Engineered to grow across borders, ensuring reliability as your business expands continent-wide." },
+    { icon: Cpu, title: "Local Expertise, Global Standards", description: "World-class engineering delivered with deep regional insight and market understanding." },
     { icon: Rocket, title: "Innovation Engineers", description: "A passionate team of African tech innovators dedicated to building solutions that transform entire business ecosystems across the continent." }
   ];
 
   return (
     <Layout>
+      <SEO 
+        title="About Us | NexaTech Rwanda"
+        description="Learn about NexaTech's mission to architect comprehensive digital ecosystems that solve Africa's most complex operational challenges."
+      />
       <div className="max-w-screen mx-auto">
         {/* Hero Section */}
         <section className="relative flex items-center justify-center pt-10 pb-28 pt-28">
@@ -144,17 +149,18 @@ const About = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
-                { name: "Alain", role: "Developer", image: "/munyakazi.png" },
-                { name: "Yvan", role: "Developer", image: "/aine.png" },
-                { name: "Paola", role: "Developer", image: "/team4.png" },
-
-                { name: "Nikita", role: "Designer", image: "/team1.png" },
-                { name: "Roger", role: "Developer", image: "/livia.png" },
-                { name: "Nelson", role: "Developer", image: "/team2.png" },
-
-                { name: "Jeremy", role: "Designer", image: "/team1.png" },
+                { name: "Alain", role: "Developer", image: "/boy.jpg" },
+                { name: "Hope", role: "Designer", image: "/avatar.jpg" },
+                { name: "Chael", role: "Developer", image: "/boy.jpg" },
                 { name: "Corene", role: "Developer", image: "/team3.png" },
-                { name: "Duff", role: "Developer", image: "/team5.png" },
+                { name: "Nikita", role: "Designer", image: "/team1.png" },
+                { name: "Roger", role: "Developer", image: "/boy.jpg" },
+                { name: "Nelson", role: "Developer", image: "/team2.png" },
+                { name: "Yvan", role: "Developer", image: "/boy.jpg" },
+                { name: "Paola", role: "Developer", image: "/team4.png" },
+                { name: "Jeremy", role: "Designer", image: "/boy.jpg" },
+
+
               ].map((member, index) => (
                 <motion.div
                   key={index}
@@ -165,6 +171,7 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
+                      loading="lazy"
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                     />
 
@@ -199,7 +206,7 @@ const About = () => {
                 Features
               </span>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-5xl font-normal mb-6 text-[#1A1A1A]">
-                What sets us apart?
+                Built for Africa, Engineered for Impact.
               </h2>
               <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
                 Every detail counts. Discover how our tailored solutions elevate your brand, <br className="hidden md:block" />

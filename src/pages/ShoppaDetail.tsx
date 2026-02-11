@@ -1,11 +1,18 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Work = () => {
+    const navigate = useNavigate();
     return (
         <Layout>
+            <SEO 
+                title="Shoppa | Business & Customer Connector"
+                description="Shoppa helps business owners and customers connect in one seamless mobile platform. Explore our work on this innovative marketing app."
+            />
             <div className="bg-white min-h-screen">
                 {/* Project Hero Section */}
                 <section className="relative pt-32 pb-20 overflow-hidden">
@@ -19,10 +26,24 @@ const Work = () => {
                     </div>
 
                     <div className="container mx-auto px-6 relative z-10">
+
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
                             {/* Left Column: Title & Info */}
                             <div className="space-y-12">
                                 <div>
+                                    {/* Back Button */}
+                                    <motion.button
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6 }}
+                                        onClick={() => navigate(-1)}
+                                        className="flex items-center gap-2 text-gray-400 hover:text-[#0057B8] transition-colors mb-12 group"
+                                    >
+                                        <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center group-hover:border-[#0057B8]/20 group-hover:bg-blue-50/50 transition-all">
+                                            <ArrowLeft className="w-4 h-4" />
+                                        </div>
+                                        <span className="text-sm font-medium">Back to Work</span>
+                                    </motion.button>
                                     <h1 className="font-serif text-4xl md:text-5xl lg:text-5xl font-normal text-gray-900 mb-6">
                                         Shoppa
                                     </h1>
@@ -127,6 +148,7 @@ const Work = () => {
                                 transition={{ duration: 1.5, ease: "easeOut" }}
                                 src="/shoppa.png"
                                 alt="Shoppa App UI"
+                                loading="lazy"
                                 className="w-full h-auto object-cover rounded-[2.5rem]"
                             />
                         </motion.div>
@@ -146,11 +168,11 @@ const Work = () => {
                             className="space-y-14"
                         >
                             <h2 className="font-serif text-2xl mb-10 md:text-3xl lg:text-3xl text-white max-w-2xl mx-auto leading-[1.3] font-normal">
-                                Why wait? Take the leap. Make your design <br className="hidden md:block" /> process stress-free today.
+                                Ready to accelerate your digital roadmap? <br className="hidden md:block" /> Let's build the future of your business.
                             </h2>
                             <Link to="/contact">
                                 <Button className="rounded-[12px] bg-white text-[#0D0D0D] hover:bg-white/90 px-10 py-2 h-auto text-[15px] font-medium shadow-xl transition-all hover:scale-105 active:scale-95 duration-300">
-                                    Join Us
+                                    Start Your Project
                                 </Button>
                             </Link>
                         </motion.div>

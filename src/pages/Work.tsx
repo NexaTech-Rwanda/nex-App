@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const projects = [
   {
@@ -17,13 +18,17 @@ const Work = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Our Work | NexaTech Rwanda Projects"
+        description="Explore our cutting-edge projects—web, mobile, and AI—that are transforming businesses across Rwanda and Africa."
+      />
       <section className="pt-32 pb-24 bg-white">
         <div className="container mx-auto px-6">
 
           {/* Header Section */}
           <div className="text-center max-w-4xl mx-auto mb-20 space-y-6">
             <h1 className="font-serif text-3xl md:text-5xl lg:text-5xl font-normal text-[#1A1A1A] leading-[1.15]">
-              Our work speaks for itself—dive into the<br className="hidden md:block" />
+              Our work speaks for itself dive into the<br className="hidden md:block" />
               projects that define us
             </h1>
             <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
@@ -42,7 +47,7 @@ const Work = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="group cursor-pointer"
-                onDoubleClick={() => navigate(`/work/${project.slug}`)}
+                onClick={() => navigate(`/work/${project.slug}`)}
               >
                 {/* Image Container */}
                 <div className="bg-[#F5F5F3] rounded-[24px] overflow-hidden p-8 md:p-12 lg:p-16 mb-6 transition-transform duration-500 group-hover:scale-[1.01]">
@@ -50,6 +55,7 @@ const Work = () => {
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
                       className="w-full h-auto object-cover"
                     />
                   </div>

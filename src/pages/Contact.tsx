@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -36,6 +37,10 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Contact Us | NexaTech Rwanda"
+        description="Ready to bring your vision to life? Connect with NexaTech Rwanda to discuss your next big digital project."
+      />
       <section className="relative min-h-screen pt-32 pb-24 hero-gradient overflow-hidden text-foreground px-4 md:px-8 lg:px-16">
         {/* Background Image */}
         <div
@@ -134,10 +139,10 @@ const Contact = () => {
           {/* Email */}
           <div className="text-center mt-12">
             <p className="font-serif text-lg mb-4">Or email us directly</p>
-            <a href="mailto:nexatech347@gmail.com">
+            <a href="mailto:info@nexatech.co.rw">
               <Button className="rounded-full gap-2 bg-primary text-primary-foreground hover:bg-primary/90">
                 <Mail className="w-4 h-4" />
-                nexatech347@gmail.com
+                info@nexatech.co.rw
               </Button>
             </a>
           </div>

@@ -116,7 +116,7 @@ const FAQ = () => {
         </motion.div>
 
         {/* Animated Logo Carousel */}
-        <div className="relative overflow-hidden py-12">
+        {/* <div className="relative overflow-hidden py-12">
           <motion.div
             animate={{
               x: [0, -1000],
@@ -141,7 +141,7 @@ const FAQ = () => {
               </div>
             ))}
           </motion.div>
-        </div>
+        </div> */}
 
       </div>
     </section>

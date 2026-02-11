@@ -7,18 +7,18 @@ import { Plus, Heart, Hand, Pencil } from "lucide-react";
 const features = [
   {
     icon: Pencil,
-    title: "AI-Powered Business Solutions",
-    description: "We build smart automation solutions for African enterprises to Rwanda's thriving tech ecosystem.",
+    title: "Custom Enterprise Platforms",
+    description: "Tailored enterprise solutions designed to streamline complex business processes and scale across the African market.",
   },
   {
     icon: Plus,
-    title: "Custom Tech Solutions",
-    description: "We design end-to-end tech solutions for Africa and Rwanda to enhance its Tech",
+    title: "Mobile Product Engineering",
+    description: "High-performance native and cross-platform mobile solutions ready for deployment and high-user engagement.",
   },
   {
     icon: Heart,
-    title: "African AI Innovation",
-    description: "We are leading our africa ai innovation hub creation through our different solutions",
+    title: "AI & Data Intelligence",
+    description: "Leveraging artificial intelligence to automate workflows and provide predictive insights for smarter decision-making.",
   },
 ];
 
@@ -48,11 +48,11 @@ const WhyChooseUs = () => {
             className="max-w-xl"
           >
             <div className="inline-block px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm text-[11px] font-medium text-gray-600 mb-4 shadow-sm">
-              Why choose us
+              Our Ready-to-Market Solutions
             </div>
 
             <h2 className="font-serif text-4xl md:text-5xl font-normal text-[#4A4A4A] mb-4 leading-[1.1]">
-              Digital Solutions for Africa
+              End-to-End Digital Transformation for Africa
             </h2>
 
             <p className="text-muted-foreground text-base leading-relaxed max-w-lg mb-6">

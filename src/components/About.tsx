@@ -1,8 +1,40 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Hand } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const Counter = ({ value, isInView }: { value: string; isInView: boolean }) => {
+  const numericPart = parseInt(value) || 0;
+  const suffix = value.replace(/[0-9]/g, "").trim();
+  const [display, setDisplay] = useState(0);
+  
+  const springValue = useSpring(0, {
+    bounce: 0,
+    duration: 2000,
+  });
+  
+  const displayValue = useTransform(springValue, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    return displayValue.on("change", (latest) => {
+      setDisplay(latest);
+    });
+  }, [displayValue]);
+
+  useEffect(() => {
+    if (isInView) {
+      springValue.set(numericPart);
+    }
+  }, [isInView, numericPart, springValue]);
+
+  return (
+    <span>
+      {display}
+      {suffix && <span className={suffix === "%" ? "" : "ml-1"}>{suffix}</span>}
+    </span>
+  );
+};
 
 const About = () => {
   const ref = useRef(null);
@@ -32,10 +64,10 @@ const About = () => {
             who we are
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-[#4A4A4A] mb-8 leading-[1.1]">
-            Who Are We? The Brain Of<br />Africa's Tech Ecosystem
+            Your Strategic Partner for<br />Africa's Digital Backbone
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            At NexaTech Rwanda, we are more than just a tech company—we are the architects of Africa's digital future.
+            NexaTech Rwanda is a product-focused technology firm based in Kigali. We don’t just write code; we architect comprehensive digital ecosystems that are ready to scale and solve Africa's most complex operational challenges.
           </p>
 
           <Link to="/contact">
@@ -58,9 +90,9 @@ const About = () => {
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-400/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
           <div className="relative z-10 max-w-3xl">
-            <h3 className="font-serif text-4xl md:text-5xl font-normal mb-6">Africa Tech Brain</h3>
+            <h3 className="font-serif text-4xl md:text-5xl font-normal mb-6">Ready-to-Market Innovation</h3>
             <p className="text-blue-100/90 text-lg mb-10 max-w-xl leading-relaxed">
-              Leveraging cutting-edge technology to enhance efficiency, precision, and sustainability in every project.
+              We focus on stability, scalability, and user experience, ensuring that the solutions we build today are ready to deliver value for years to come across the continent.
             </p>
 
             <ul className="space-y-4 mb-10">
@@ -105,7 +137,9 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.5 + index * 0.15 }}
               className="px-4"
             >
-              <div className="font-serif text-5xl md:text-6xl font-normal text-[#4A4A4A] mb-3">{stat.value}</div>
+              <div className="font-serif text-5xl md:text-6xl font-normal text-[#4A4A4A] mb-3">
+                <Counter value={stat.value} isInView={isInView} />
+              </div>
               <div className="text-lg font-medium text-gray-800 mb-3">{stat.label}</div>
               <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">{stat.desc}</p>
             </motion.div>
