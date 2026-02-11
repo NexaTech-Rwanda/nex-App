@@ -128,7 +128,7 @@ const Hero = () => {
                     <AvatarFallback>U3</AvatarFallback>
                   </Avatar>
                 </div>
-                <span className="text-sm text-muted-foreground">Trusted by 30+ Clients</span>
+                <span className="text-sm text-muted-foreground">Trusted by 300+ Users</span>
               </motion.div>
             </div>
           </motion.div>
