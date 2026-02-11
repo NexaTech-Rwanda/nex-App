@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import { CornerDownRight } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "About", href: "/About" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Work", href: "/work" },
 ];
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
@@ -28,28 +31,22 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-0.5 font-serif">
-          {/* Home link */}
-          <Link
-            to="/"
-            className="text-[13px] font-medium text-black/80 hover:text-[#0057B8] hover:bg-blue-50 px-3 py-1.5 rounded-md transition-all duration-200"
-          >
-            Home
-          </Link>
-
-          {/* About */}
-          <Link
-            to="/about"
-            className="text-[13px] font-medium text-black/80 hover:text-[#0057B8] hover:bg-blue-50 px-3 py-1.5 rounded-md transition-all duration-200"
-          >
-            About
-          </Link>
-
-          <Link
-            to="/work"
-            className="text-[13px] font-medium text-black/80 hover:text-[#0057B8] hover:bg-blue-50 px-3 py-1.5 rounded-md transition-all duration-200"
-          >
-            Work
-          </Link>
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`text-[13px] font-medium px-3 py-1.5 rounded-md transition-all duration-200 ${
+                  isActive 
+                    ? "text-[#0057B8] bg-blue-50" 
+                    : "text-black/80 hover:text-[#0057B8] "
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Say Hi Button */}
@@ -58,7 +55,7 @@ const Navbar = () => {
             className="rounded-[10px] bg-[#0057B8]/90 hover:bg-[#0057B8] text-white font-serif font-medium px-4 h-[36px] gap-2 shadow-sm transition-all duration-300 text-[13px]"
           >
             <CornerDownRight className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
-            Say hi
+            Get in Touch
           </Button>
         </Link>
       </div>

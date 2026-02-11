@@ -30,7 +30,7 @@ const Work = () => {
             Our Work
           </div>
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-normal text-[#1A1A1A] leading-[1.15]">
-            Our work speaks for itself—dive into the<br className="hidden md:block" />
+            Our work speaks for itself dive into the<br className="hidden md:block" />
             projects that define us
           </h2>
         </motion.div>

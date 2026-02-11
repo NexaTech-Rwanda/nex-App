@@ -58,7 +58,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm mb-10"
           >
             <span className="w-1.5 h-1.5 bg-primary-foreground rounded-full animate-pulse" />
-            Revolutionize Africa Tech
+            Building for Africa
           </motion.div>
 
           {/* Heading */}
@@ -66,9 +66,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-serif text-5xl md:text-7xl lg:text-[80px] font-normal text-[#4A4A4A] mb-8 leading-[1.1] tracking-tight"
+            className="font-serif text-3xl md:text-5xl lg:text-[55px] font-normal text-[#4A4A4A] mb-8 leading-[1.1] tracking-tight"
           >
-            Building Africa&apos;s Tech Ecosystem <br className="hidden md:block" /> From Rwanda
+            Engineering Scalable, Ready to Market <br className="hidden md:block" /> Solutions for Africa&apos;s Future.
           </motion.h1>
 
           {/* Subtext */}
@@ -76,11 +76,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+            className="text-gray-500 text-md md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light"
           >
-            Transform Africa&apos;s tech with NexaTech
-            Rwanda&apos;s innovative solutions. We&apos;re creating the tech ecosystem
-            that will make Rwanda the brain of Africa&apos;s technological revolution.
+            We partner with visionaries to build high impact digital systems web
+            platforms, mobile applications, and AI that are engineered for the
+            African market and ready to deploy.
           </motion.p>
 
           {/* CTA Button */}
@@ -93,7 +93,7 @@ const Hero = () => {
               size="lg"
               className="rounded-full bg-[#0057B8] hover:bg-[#0057B8]/90 text-white text-base px-6 py-2 h-auto shadow-[0_20px_40px_-15px_rgba(var(--primary),0.3)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mb-5"
             >
-              Join Us
+              Explore Our Solutions
             </Button>
           </motion.div>
 

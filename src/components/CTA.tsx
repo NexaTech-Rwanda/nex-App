@@ -37,7 +37,7 @@ const CTA = () => {
           className="text-center"
         >
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 leading-tight">
-            Join Africa's Tech Revolution — Start Today!
+            Join Africa's Tech Revolution Start Today!
           </h2>
 
           <p className="font-serif text-2xl md:text-3xl text-white/90 mb-12">
