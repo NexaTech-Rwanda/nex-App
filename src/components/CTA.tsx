@@ -15,7 +15,6 @@ const CTA = () => {
       onMouseLeave={() => setIsHovered(false)}
       className="relative overflow-hidden py-32 bg-[#0057B8]"
     >
-      {/* Smoky Rotating Background - Changes direction on hover */}
       <motion.div
         className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
         animate={{ rotate: isHovered ? -360 : 360 }}
@@ -28,7 +27,6 @@ const CTA = () => {
         <div className="smoke-ring-main opacity-60 mix-blend-screen" />
       </motion.div>
 
-      {/* === Content === */}
       <div className="container relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -37,11 +35,14 @@ const CTA = () => {
           className="text-center"
         >
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4 leading-tight">
-            Join Africa's Tech Revolution Start Today!
+            Partner with the company
+            <br />
+            building Africa&apos;s next essential-service ventures
           </h2>
 
           <p className="font-serif text-2xl md:text-3xl text-white/90 mb-12">
-            Through Joining NexaTech Rwanda
+            Investors, strategic partners, and ecosystem collaborators are
+            welcome to reach out.
           </p>
 
           <motion.div
@@ -50,10 +51,8 @@ const CTA = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Link to="/contact">
-              <Button
-                className="rounded-xl bg-white text-[#4A4A4A] hover:bg-gray-100 px-12 h-14 text-lg font-medium shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                Join Us
+              <Button className="rounded-xl bg-white text-[#4A4A4A] hover:bg-gray-100 px-12 h-14 text-lg font-medium shadow-xl transition-all duration-300 hover:scale-105">
+                Contact NexatechRwanda
               </Button>
             </Link>
           </motion.div>

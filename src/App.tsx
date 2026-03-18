@@ -9,8 +9,9 @@ import React, { Suspense, lazy } from "react";
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
+const TeamPage = lazy(() => import("./pages/TeamPage"));
 const Work = lazy(() => import("./pages/Work"));
-const ShoppaDetail = lazy(() => import("./pages/ShoppaDetail"));
+const ProductDetail = lazy(() => import("./pages/ShoppaDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -37,8 +38,11 @@ const App = () => (
 
               {/* Other pages */}
               <Route path="/about" element={<About />} />
+              <Route path="/team" element={<TeamPage />} />
+              <Route path="/products" element={<Work />} />
+              <Route path="/products/:slug" element={<ProductDetail />} />
               <Route path="/work" element={<Work />} />
-              <Route path="/work/shoppa" element={<ShoppaDetail />} />
+              <Route path="/work/:slug" element={<ProductDetail />} />
               <Route path="/contact" element={<Contact />} />
 
               {/* 404 – MUST stay last */}

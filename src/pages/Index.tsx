@@ -1,28 +1,27 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Work from "@/components/Work";
 import About from "@/components/About";
+import Work from "@/components/Work";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import Team from "@/components/Team";
 import FAQ from "@/components/FAQ";
-import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import SEO from "@/components/SEO";
+import { BRAND_NAME } from "@/data/nexatech";
 
 const Index = () => {
   return (
     <Layout>
       <SEO 
-        title="NexaTech Rwanda | Engineering Africa's Digital Future"
-        description="Transform your vision into reality with NexaTech's ready-to-market digital solutions. We build scalable web platforms, mobile apps, and AI for the African continent."
+        title={`${BRAND_NAME} | Building Africa's Essential Service Portfolio`}
+        description={`${BRAND_NAME} is a Rwanda-first consumer technology holding company building and owning products across commerce, mobility, services, and agriculture.`}
       />
       <Hero />
-      <WhyChooseUs />
-      <Work />
       <About />
+      <Work />
+      <WhyChooseUs />
       <Team />
       <FAQ />
-      <Testimonials />
       <CTA />
     </Layout>
   );

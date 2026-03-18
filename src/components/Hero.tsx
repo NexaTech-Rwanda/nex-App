@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Link } from "react-router-dom";
+import { leaders } from "@/data/nexatech";
 
 const Hero = () => {
   return (
@@ -58,7 +60,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm mb-10"
           >
             <span className="w-1.5 h-1.5 bg-primary-foreground rounded-full animate-pulse" />
-            Building for Africa
+            Rwanda-first consumer tech holding company
           </motion.div>
 
           {/* Heading */}
@@ -68,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-serif text-3xl md:text-5xl lg:text-[55px] font-normal text-[#4A4A4A] mb-8 leading-[1.1] tracking-tight"
           >
-            Engineering Scalable, Ready to Market <br className="hidden md:block" /> Solutions for Africa&apos;s Future.
+            Building And Owning Digital Products <br className="hidden md:block" /> For Africa&apos;s Essential Services.
           </motion.h1>
 
           {/* Subtext */}
@@ -78,23 +80,36 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-gray-500 text-md md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light"
           >
-            We partner with visionaries to build high impact digital systems web
-            platforms, mobile applications, and AI that are engineered for the
-            African market and ready to deploy.
+            NexatechRwanda is a product ownership company building a portfolio
+            of consumer-first ventures across commerce, mobility, services, and
+            agriculture. We start in Rwanda, prove real market value, and scale
+            durable products across Africa over time.
           </motion.p>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex flex-wrap items-center justify-center gap-3"
           >
-            <Button
-              size="lg"
-              className="rounded-full bg-[#0057B8] hover:bg-[#0057B8]/90 text-white text-base px-6 py-2 h-auto shadow-[0_20px_40px_-15px_rgba(var(--primary),0.3)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mb-5"
-            >
-              Explore Our Solutions
-            </Button>
+            <Link to="/products">
+              <Button
+                size="lg"
+                className="rounded-full bg-[#0057B8] hover:bg-[#0057B8]/90 text-white text-base px-6 py-2 h-auto shadow-[0_20px_40px_-15px_rgba(var(--primary),0.3)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mb-5"
+              >
+                Explore Our Products
+              </Button>
+            </Link>
+            <Link to="/team">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full border-gray-200 bg-white/80 text-[#1A1A1A] hover:bg-white text-base px-6 py-2 h-auto shadow-sm transition-all duration-300 mb-5"
+              >
+                Meet The Team
+              </Button>
+            </Link>
           </motion.div>
 
           {/* 🔁 Floating Avatars */}
@@ -113,22 +128,25 @@ const Hero = () => {
                 className="flex flex-col items-center gap-3"
               >
                 <div className="flex -space-x-2">
-                  <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
-                    <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" />
-                    <AvatarFallback>U1</AvatarFallback>
-                  </Avatar>
-
-                  <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
-                    <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" />
-                    <AvatarFallback>U2</AvatarFallback>
-                  </Avatar>
-
-                  <Avatar className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10">
-                    <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" />
-                    <AvatarFallback>U3</AvatarFallback>
-                  </Avatar>
+                  {leaders.map((leader) => (
+                    <Avatar
+                      key={leader.name}
+                      className="w-10 h-10 border-2 border-background transition-transform hover:scale-110 hover:z-10"
+                    >
+                      <AvatarImage src={leader.image} alt={leader.name} />
+                      <AvatarFallback>
+                        {leader.name
+                          .split(" ")
+                          .map((part) => part[0])
+                          .join("")
+                          .slice(0, 2)}
+                      </AvatarFallback>
+                    </Avatar>
+                  ))}
                 </div>
-                <span className="text-sm text-muted-foreground">Trusted by 300+ Users</span>
+                <span className="text-sm text-muted-foreground">
+                  4 active products in development across essential services
+                </span>
               </motion.div>
             </div>
           </motion.div>

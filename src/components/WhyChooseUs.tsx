@@ -2,23 +2,25 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "./ui/button";
-import { Plus, Heart, Hand, Pencil } from "lucide-react";
+import { Building2, Hand, Layers3, MapPinned } from "lucide-react";
+import { Link } from "react-router-dom";
+import { operatingPrinciples } from "@/data/nexatech";
 
 const features = [
   {
-    icon: Pencil,
-    title: "Custom Enterprise Platforms",
-    description: "Tailored enterprise solutions designed to streamline complex business processes and scale across the African market.",
+    icon: Layers3,
+    title: operatingPrinciples[0].title,
+    description: operatingPrinciples[0].description,
   },
   {
-    icon: Plus,
-    title: "Mobile Product Engineering",
-    description: "High-performance native and cross-platform mobile solutions ready for deployment and high-user engagement.",
+    icon: MapPinned,
+    title: operatingPrinciples[1].title,
+    description: operatingPrinciples[1].description,
   },
   {
-    icon: Heart,
-    title: "AI & Data Intelligence",
-    description: "Leveraging artificial intelligence to automate workflows and provide predictive insights for smarter decision-making.",
+    icon: Building2,
+    title: operatingPrinciples[2].title,
+    description: operatingPrinciples[2].description,
   },
 ];
 
@@ -48,33 +50,38 @@ const WhyChooseUs = () => {
             className="max-w-xl"
           >
             <div className="inline-block px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm text-[11px] font-medium text-gray-600 mb-4 shadow-sm">
-              Our Ready-to-Market Solutions
+              How Nexatech Builds
             </div>
 
             <h2 className="font-serif text-4xl md:text-5xl font-normal text-[#4A4A4A] mb-4 leading-[1.1]">
-              End-to-End Digital Transformation for Africa
+              A Holding Company For Africa&apos;s Essential Services
             </h2>
 
             <p className="text-muted-foreground text-base leading-relaxed max-w-lg mb-6">
-              NexaTech Rwanda pioneers Africa's digital transformation by delivering
-              innovative tech solutions that empower businesses and governments
-              for sustainable development.
+              NexatechRwanda does not operate as an agency building software for
+              clients. It builds, validates, owns, and compounds consumer-first
+              products that modernize commerce, mobility, services, and
+              agriculture from Rwanda outward.
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
-              <Button
-                className="rounded-xl bg-[#0057B8]/90 hover:bg-[#0057B8] text-white px-6 h-11 gap-2 shadow-lg shadow-blue-900/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-sm"
-              >
-                <Hand className="w-4 h-4" />
-                Get started
-              </Button>
+              <Link to="/products">
+                <Button
+                  className="rounded-xl bg-[#0057B8]/90 hover:bg-[#0057B8] text-white px-6 h-11 gap-2 shadow-lg shadow-blue-900/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-sm"
+                >
+                  <Hand className="w-4 h-4" />
+                  View products
+                </Button>
+              </Link>
 
-              <Button
-                variant="outline"
-                className="rounded-xl border-gray-200 bg-transparent text-foreground hover:bg-white/50 px-6 h-11 text-sm transition-all duration-300"
-              >
-                How we work ?
-              </Button>
+              <Link to="/about">
+                <Button
+                  variant="outline"
+                  className="rounded-xl border-gray-200 bg-transparent text-foreground hover:bg-white/50 px-6 h-11 text-sm transition-all duration-300"
+                >
+                  Operating model
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -95,10 +102,10 @@ const WhyChooseUs = () => {
                 whileHover={{ scale: 1.05 }}
                 animate={
                   index === 0
-                    ? { y: [0, -5, 0], rotate: [0, 15, -10, 0] } // Pencil: Swing
+                    ? { y: [0, -5, 0], rotate: [0, 15, -10, 0] }
                     : index === 1
-                      ? { y: [0, -5, 0], scale: [1, 1.2, 1], rotate: [0, 90, 0] } // Plus/Star: Zoom + Spin
-                      : { y: [0, -5, 0], scale: [1, 1.15, 1] } // Heart: Zoom (Heartbeat)
+                      ? { y: [0, -5, 0], scale: [1, 1.2, 1], rotate: [0, 90, 0] }
+                      : { y: [0, -5, 0], scale: [1, 1.15, 1] }
                 }
                 transition={{
                   y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.5 },

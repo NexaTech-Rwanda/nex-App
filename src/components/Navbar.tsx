@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Work", href: "/work" },
+  { label: "Products", href: "/work" },
 ];
 
 const Navbar = () => {
@@ -26,7 +26,7 @@ const Navbar = () => {
           to="/"
           className="font-serif font-bold text-[17px] text-[#0057B8] px-3 py-1.5 cursor-pointer transition-colors duration-300 tracking-tight"
         >
-          NexaTech Rwanda
+          NexatechRwanda
         </Link>
 
         {/* Navigation Links */}
@@ -49,13 +49,13 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Say Hi Button */}
+        {/* Contact Button */}
         <Link to="/contact" className="ml-1">
           <Button
             className="rounded-[10px] bg-[#0057B8]/90 hover:bg-[#0057B8] text-white font-serif font-medium px-4 h-[36px] gap-2 shadow-sm transition-all duration-300 text-[13px]"
           >
             <CornerDownRight className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
-            Get in Touch
+            Contact
           </Button>
         </Link>
       </div>
