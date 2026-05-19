@@ -185,7 +185,7 @@ export const productTeam: TeamMember[] = [
   {
     name: "Nelson",
     role: "Backend Engineer",
-    image: "/Nelson.png",
+    image: "/nelson.jpg",
   },
   {
     name: "Paola",

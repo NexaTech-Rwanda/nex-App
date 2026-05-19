@@ -141,9 +141,7 @@ const TeamPage = () => {
                         <div className="w-16 h-16 rounded-full bg-[#E4ECF8] text-[#0057B8] flex items-center justify-center font-serif text-xl mb-4">
                           {member.name.slice(0, 1)}
                         </div>
-                        <p className="text-xs uppercase tracking-[0.18em] text-gray-400">
-                          Image pending
-                        </p>
+                       
                       </div>
                     )}
                   </div>
